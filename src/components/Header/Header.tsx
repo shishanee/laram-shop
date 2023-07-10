@@ -12,7 +12,7 @@ const Header = () => {
         <Link>SALE</Link>
       </div>
       <div className={styles.headerRight}>
-        <Link>КОРЗИНА</Link>
+        <Link to="/cart">КОРЗИНА</Link>
         <Link to={'/account'}>АККАУНТ</Link>
       </div>
     </div>

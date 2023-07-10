@@ -6,18 +6,22 @@ import Header from "./components/Header/Header";
 import Sign from "./components/Sign/Sign";
 import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
+import Garant from "./components/Garant/Garant";
+import Delivery from "./components/Delivery/Delivery";
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage/>}></Route>
+        <Route path="/" element={<HomePage />}></Route>
         <Route path="/account" element={<Sign />} />
         <Route path="/auth" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
+        <Route path="/garant" element={<Garant />} />
+        <Route path="/delivery" element={<Delivery />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }

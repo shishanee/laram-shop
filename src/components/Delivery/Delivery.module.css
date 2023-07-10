@@ -1,0 +1,21 @@
+.block  p{
+  color: grey;
+}
+
+.block h1 {
+  color: rgb(171, 168, 168);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+
+}
+
+.block {
+  width: 360px;
+  text-align: center;
+}

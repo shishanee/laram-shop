@@ -72,3 +72,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+.imageBlock img {
+  height: 657px;
+}

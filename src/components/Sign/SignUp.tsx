@@ -49,7 +49,7 @@ const SignUp = () => {
         <button onClick={handleRegister}>Зарегистрироваться</button>
       </div>
     </div>
-    <div>
+    <div className={styles.imageBlock}>
       <img src={photo} alt="" />
     </div>
   </div>

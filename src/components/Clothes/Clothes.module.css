@@ -1,0 +1,44 @@
+.oneClothes img {
+  width: 360px;
+  height: 500px;
+  transition: 0.3s;
+}
+
+.oneClothes h4{
+  position: absolute;
+  color: white;
+  /* bottom: 280px; */
+  /* left: 160px; */
+  top: 50%;
+  left: calc(50% - 26px);
+  font-weight: 500;
+  z-index: 999;
+}
+
+.oneClothes img:hover{
+  scale: 103%;
+}
+
+.oneClothes {
+  margin: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.allClothes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.oneClothes h5 {
+  font-weight: 300;
+  color: #ffffffe1;
+  position: absolute;
+  top: 35%;
+  left: 11%;
+  font-size: 25px;
+  width: 280px;
+  text-align: center;
+  z-index: 999;
+}

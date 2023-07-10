@@ -1,0 +1,21 @@
+.blockOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.blockOne h1 {
+  font-size: 60px;
+}
+
+.blockOne p {
+  font-size: 17px;
+  color: rgb(101, 100, 100);
+}
+
+.blockTwo img {
+  width: 100%;
+}

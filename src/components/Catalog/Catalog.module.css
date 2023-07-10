@@ -1,0 +1,26 @@
+.catalogBlock {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-top: 56px;
+}
+.catalogList {
+  display: flex;
+  justify-content: center;
+  margin-top: 84px;
+  column-gap: 20px;
+}
+.collectionsList {
+}
+.list {
+  text-transform: uppercase;
+  width: 203px;
+}
+.list p {
+  font-size: 13px;
+  color: #707070;
+}
+.listName {
+  font-size: 20px;
+  color: #080B13;
+}

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authSignIn } from "../../features/applicationSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import photo from "../../../public/Foto.png";
+import styles from "./SignIn.module.css";
 
 const SignIn = () => {
   const [login, setLogin] = useState("");
@@ -20,35 +22,31 @@ const SignIn = () => {
 
   const handleLogin = () => {
     dispatch(authSignIn({ login, password }));
-    navigate('/')
+    navigate("/");
   };
   return (
-    <div >
-      <div >
-        <Link  to={"/login"}>
-          Вход
-        </Link>
-        <Link to={"/auth"}>Регистрация</Link>
+    <div className={styles.mainBlockIn}>
+      <div className={styles.blockOne}>
+        <div className={styles.form}>
+          <p>Войдите в аккаунт</p>
+          <input
+            onChange={changeLogin}
+            value={login}
+            type="text"
+            placeholder="Введите логин"
+          />
+          <input
+            onChange={changePassword}
+            value={password}
+            type="password"
+            placeholder="Введите пароль"
+          />
+          <button onClick={handleLogin}>Войти</button>
+        </div>
       </div>
-      <input
-        onChange={changeLogin}
-        value={login}
-        type="text"
-        placeholder="Login"
-      />
-      <input
-        onChange={changePassword}
-        value={password}
-        type="password"
-        placeholder="Password"
-      />
       <div>
-        <input type="checkbox" />
-        Запомнить меня
+        <img src={photo} alt="" />
       </div>
-      <button onClick={handleLogin}>
-        Sign In
-      </button>
     </div>
   );
 };

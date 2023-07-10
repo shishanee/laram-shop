@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authSignUp } from "../../features/applicationSlice";
 import { Link, useNavigate } from "react-router-dom";
+import photo from "../../../public/Foto.png";
+import styles from "./SignIn.module.css";
+
+
 
 const SignUp = () => {
   const [login, setLogin] = useState("");
@@ -26,27 +30,29 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <div>
-        <Link to={"/login"}>Вход</Link>
-        <Link to={"/auth"}>Регистрация</Link>
+    <div className={styles.mainBlockIn}>
+    <div className={styles.blockOne}>
+      <div className={styles.form}>
+        <p>Создайте аккаунт</p>
+        <input
+          onChange={changeLogin}
+          value={login}
+          type="text"
+          placeholder="Введите логин"
+        />
+        <input
+          onChange={changePassword}
+          value={password}
+          type="password"
+          placeholder="Введите пароль"
+        />
+        <button onClick={handleRegister}>Зарегистрироваться</button>
       </div>
-      <input
-        value={login}
-        onChange={changeLogin}
-        type="text"
-        placeholder="Login"
-      />
-      <input
-        value={password}
-        onChange={changePassword}
-        type="password"
-        placeholder="Password"
-      />
-      <button disabled={login >= 0 || password >= 0} onClick={handleRegister}>
-        Sign Up
-      </button>
     </div>
+    <div>
+      <img src={photo} alt="" />
+    </div>
+  </div>
   );
 };
 

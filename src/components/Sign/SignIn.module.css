@@ -1,0 +1,74 @@
+.mainBlockIn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 111px 80px 60px;
+}
+
+.form input {
+  width: 400px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border: 1px solid black;
+  font-size: 16px;
+  font-weight: 500;
+}
+.form input:placeholder-shown {
+  color: grey;
+  font-size: 15px;
+}
+
+.form p {
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form button {
+  width: 240px;
+  height: 50px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.form button:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.blockOne {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.blockLinks {
+  display: flex;
+  margin: 250px auto;
+}
+.links a {
+  background: black;
+  width: 240px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 8px 0px;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -12,7 +12,7 @@ const Sign = () => {
           <Link to={"/auth"}>Зарегистрироваться</Link>
         </div>
       </div>
-      <div>
+      <div className={styles.imageBlock}>
         <img src={photo} alt="" />
       </div>
     </div>

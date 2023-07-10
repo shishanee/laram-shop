@@ -44,7 +44,7 @@ const SignIn = () => {
           <button onClick={handleLogin}>Войти</button>
         </div>
       </div>
-      <div>
+      <div className={styles.imageBlock}>
         <img src={photo} alt="" />
       </div>
     </div>

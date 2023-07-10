@@ -13,7 +13,7 @@ const Header = () => {
       </div>
       <div className={styles.headerRight}>
         <Link>КОРЗИНА</Link>
-        <Link>АККАУНТ</Link>
+        <Link to={'/account'}>АККАУНТ</Link>
       </div>
     </div>
   );

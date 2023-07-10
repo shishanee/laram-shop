@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 60px;
+}
+
+.headerCenter :first-child {
+  margin-right: 25px;
+}
+
+.headerCenter a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.headerRight a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.headerRight :first-child {
+  margin-right: 25px;
+}
+
+.logo h1 {
+  font-size: 40px;
+}
+
+.header a:hover {
+  border-bottom: 2px solid black;
+}

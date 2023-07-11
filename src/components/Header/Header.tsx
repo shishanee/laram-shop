@@ -147,6 +147,24 @@ const Header = ({theme, setTheme}) => {
           </div>
         </div>
       )}
+           {isOpenAccessory && (
+        <div className={styles.accesList}>
+          <div className={styles.list}>
+            <p>АКСЕССУАРЫ</p>
+            <div className={styles.catalogBlock}>
+              {acces.map((item) => {
+                return (
+                  <div className={styles.listName}>
+                    <button onClick={() => handleNavigateAcces(item._id)}>
+                      {item.name}
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

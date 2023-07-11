@@ -10,6 +10,7 @@ import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
+import { oneCategory, oneCollection } from "../../features/clothesSlice";
 
 const Header = () => {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
@@ -52,12 +53,14 @@ const Header = () => {
 
   const navigate = useNavigate();
   function handleNavigateCategories(id) {
+    dispatch(oneCategory(id))
     navigate(`category/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
   function handleNavigateCollections(id) {
+    dispatch(oneCollection(id))
     navigate(`collection/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);

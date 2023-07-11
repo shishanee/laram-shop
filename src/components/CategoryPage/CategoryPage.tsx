@@ -1,19 +1,12 @@
 import * as React from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import Clothes from "../Clothes/Clothes";
 
 const OneCategory = () => {
-  const categories = useSelector((state) => state.catalog.categories);
-  console.log(categories);
-  // console.log(collections);
-  const id = useParams().id
-  
-
   return (
     <div>
-      123
+      <Clothes />
     </div>
-  )
-}
+  );
+};
 
-export default OneCategory
+export default OneCategory;

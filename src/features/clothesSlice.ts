@@ -20,6 +20,32 @@ export const oneClothes = createAsyncThunk(
   }
 );
 
+export const oneCollection = createAsyncThunk(
+  "one/collection",
+  async (id , thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/collection/${id}`);
+      const data = res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const oneCategory = createAsyncThunk(
+  "one/category",
+  async (id , thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/category/${id}`);
+      const data = res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const getClothes = createAsyncThunk(
   "get/clothes",
   async (_, thunkAPI) => {
@@ -53,6 +79,12 @@ const cartSlice = createSlice({
       })
       .addCase(oneClothes.pending, (state) => {
         state.loading = true
+      })
+      .addCase(oneCollection.fulfilled,(state,action) => {
+         state.clothes = action.payload
+      })
+      .addCase(oneCategory.fulfilled,(state,action) => {
+         state.category = action.payload
       })
   },
 });

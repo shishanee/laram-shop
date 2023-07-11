@@ -3,6 +3,7 @@ import photo from "../../../public/guys.png";
 import Clothes from "../Clothes/Clothes";
 
 const HomePage = () => {
+  
   return (
     <div className={styles.homePage}>
       <div className={styles.blockOne}>

@@ -1,8 +1,8 @@
 import styles from "./Delivery.module.css";
 
-const Delivery = () => {
+const Delivery = ({theme, setTheme}) => {
   return (
-    <div className={styles.main}>
+    <div className={theme ? styles.main : styles.mainDark}>
       <div className={styles.block}>
         <h1>Условия доставки</h1>
         <br />

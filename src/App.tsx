@@ -16,10 +16,24 @@ import OneClothes from "./components/OneClothes/OneClothes";
 import Acces from "./components/Acces/Acces";
 
 function App() {
+  const [theme, setTheme] = React.useState(false)
   return (
     <>
-      <Header />
+      <Header theme={theme} setTheme={setTheme} />
       <Routes>
+
+        <Route path="/" element={<HomePage theme={theme} setTheme={setTheme} />}></Route>
+        <Route path="/account" element={<Sign theme={theme} setTheme={setTheme} />} />
+        <Route path="/auth" element={<SignUp theme={theme} setTheme={setTheme} />} />
+        <Route path="/login" element={<SignIn theme={theme} setTheme={setTheme} />} />
+
+        <Route path='/category/:id' element={<CategoryPage/>}/>
+        <Route path='/collection/:id' element={<CollectionPage/>}/>
+        {/* <Route path="/catalog" element={<Catalog />} /> */}
+
+
+        <Route path="/garant" element={<Garant theme={theme} setTheme={setTheme} />} />
+        <Route path="/delivery" element={<Delivery theme={theme} setTheme={setTheme} />} />
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/account" element={<Sign />} />
         <Route path="/auth" element={<SignUp />} />
@@ -31,8 +45,9 @@ function App() {
         <Route path="/acces/:id" element={<Acces />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/delivery" element={<Delivery />} />
+
       </Routes>
-      <Footer />
+      <Footer theme={theme} setTheme={setTheme} />
     </>
   );
 }

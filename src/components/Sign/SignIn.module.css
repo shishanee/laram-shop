@@ -1,6 +1,7 @@
 .mainBlockIn {
   display: flex;
   justify-content: space-between;
+  padding-top: 85px;
 }
 
 .form {
@@ -75,4 +76,19 @@
 
 .imageBlock img {
   height: 657px;
+  display: block;
+}
+.mainBlockInDark {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding-top: 85px;
+}
+.mainBlockInDark a,
+.mainBlockInDark button {
+  background-color: white;
+  color: black;
+}
+.mainBlockInDark p {
+  color: white;
 }

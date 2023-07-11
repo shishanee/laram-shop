@@ -10,12 +10,18 @@ import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
+import { getClothes } from "../../features/clothesSlice";
+import sun from '../../../public/sun4.png'
+import moon from '../../../public/moon4.png'
 import { oneCategory, oneCollection } from "../../features/clothesSlice";
 
-const Header = () => {
+
+const Header = ({theme, setTheme}) => {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenCollection, setIsOpenCollection] = useState(false);
   const [isOpenAccessory, setIsOpenAccessory] = useState(false);
+
+
 
   const categories = useSelector((state) => state.catalog.categories);
   const collections = useSelector((state) => state.catalog.collections);
@@ -26,6 +32,7 @@ const Header = () => {
   useEffect(() => {
     dispatch(getAllCategories());
     dispatch(getAllCollections());
+    dispatch(getClothes());
     dispatch(getAllAcces());
   }, []);
 
@@ -66,16 +73,19 @@ const Header = () => {
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
+
+  function handleTheme () {
+    setTheme(!theme)
+  }
+
   function handleNavigateAcces(id) {
     navigate(`acces/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
-
-  
   return (
-    <div className={styles.header}>
+    <div className={theme ? styles.header : (styles.header, styles.headerDark)}>
       <div className={styles.logo}>
         <Link to={"/"}>
           <h1>L A R A M</h1>
@@ -96,6 +106,9 @@ const Header = () => {
       <div className={styles.headerRight}>
         <Link to="/cart">КОРЗИНА</Link>
         <Link to={'/account'}>АККАУНТ</Link>
+      <button className={theme ? styles.themeButton : styles.themeButtonDark} onClick={handleTheme}>
+        <div id={styles.slider}><img src={theme ? sun : moon} alt='sun || moon' /></div>
+      </button>
       </div>
 
       {isOpenCategory && (
@@ -134,24 +147,7 @@ const Header = () => {
           </div>
         </div>
       )}
-      {isOpenAccessory && (
-        <div className={styles.accesList}>
-          <div className={styles.list}>
-            <p>АКСЕССУАРЫ</p>
-            <div className={styles.catalogBlock}>
-              {acces.map((item) => {
-                return (
-                  <div className={styles.listName}>
-                    <button onClick={() => handleNavigateAcces(item._id)}>
-                      {item.name}
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
+
     </div>
   );
 };

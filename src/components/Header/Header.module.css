@@ -1,8 +1,12 @@
 .header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 60px;
+  background-color: white;
 }
 .headerCenter {
   width: 430px;
@@ -10,24 +14,26 @@
   justify-content: space-between;
 }
 
+
 .headerCenter button:hover {
   border-bottom: 2px solid grey;
 }
+
 
 .headerCenter a {
   text-decoration: none;
   color: black;
   font-weight: 500;
 }
-
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
 .headerRight a {
   text-decoration: none;
   color: black;
   font-weight: 500;
-}
-
-.headerRight :first-child {
-  margin-right: 25px;
 }
 
 .logo h1 {
@@ -104,3 +110,98 @@
   color: black;
   font-size: 40px;
 }
+
+
+
+
+
+
+
+
+/* dark theme */
+
+.headerDark {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 60px;
+  background-color: black;
+}
+.headerDark h1,
+.headerDark button,
+.headerDark a {
+  background-color: black;
+  color: white;
+}
+.headerDark button:hover {
+  /* border-bottom: 1px solid white; */
+}
+.headerCenterDark {
+  width: 430px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+.headerDark .categoriesList,
+.headerDark .collectionsList {
+  box-shadow: none;
+}
+.headerDark .listName button {
+  background-color: inherit;
+  color: black;
+}
+#slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: grey; */
+}
+#slider img {
+  width: 16px;
+}
+/* WHITE BUTTON */
+.themeButton,
+.headerDark .themeButton {
+  background-color: black;
+  border: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  padding: 0 3px;
+}
+.themeButton div,
+.headerDark .themeButton div {
+  transition: all 0.3s ease;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+/* DARK BUTTON */
+.themeButtonDark,
+.headerDark .themeButtonDark {
+  background-color: white;
+  border: none;
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  padding: 0 3px;
+}
+.themeButtonDark div,
+.headerDark .themeButtonDark div {
+  transition: all 0.3s ease;
+  margin-left: 24px;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+

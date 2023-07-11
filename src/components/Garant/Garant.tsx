@@ -1,9 +1,9 @@
 import styles from "./Garant.module.css";
 import photo from "../../../public/photoOne.jpg";
 
-const Garant = () => {
+const Garant = ({theme, setTheme}) => {
   return (
-    <div className={styles.blockMain}>
+    <div className={theme ? styles.blockMain : styles.blockMainDark}>
       <div className={styles.blockOne}>
         <h1>Гарантия</h1>
         <p>

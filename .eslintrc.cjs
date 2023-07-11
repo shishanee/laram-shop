@@ -20,8 +20,12 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': [
       'warn',
+      
       { allowConstantExport: true },
     ],
     '@typescript-eslint/no-non-null-assertion': 'off',
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "error", 
+    "no-unused-vars": 0,
   },
 }

@@ -1,0 +1,108 @@
+.imageBlock img {
+  width: 620px;
+  height: 850px;
+}
+
+.imageBlock {
+  margin: 0px 60px;
+}
+
+.allImages img {
+  width: 50px;
+  height: 70px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.allImages img:hover {
+  scale: 1.2;
+}
+
+
+
+.allImages {
+  display: flex;
+  flex-direction: column;
+  left: 70px;
+}
+
+.oneClotheMain {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.textBlock h1 {
+  font-size: 24px;
+  font-weight: 400;
+  color: grey;
+  margin-bottom: 40px;
+}
+
+.textBlock h4 {
+  font-size: 30px;
+  font-weight: 500;
+  color: grey;
+  margin-bottom: 40px;
+}
+
+
+.sizeBlock h3{
+  font-weight: 500;
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.sizes {
+  width: 270px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.sizes button {
+  padding: 15px;
+  font-size: 15px;
+  background: transparent;
+  border: 1px solid rgba(128, 128, 128, 0.486);
+  color: grey;
+}
+
+.table {
+  display: flex;
+  background: transparent;
+  border: none;
+  text-decoration: underline grey;
+  cursor: pointer;
+}
+.table img {
+  width: 30px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.table h4 {
+  font-size: 17px;
+  color: grey;
+  font-weight: 400;
+}
+
+.addCart {
+  padding: 20px 40px;
+  border: 1px solid;
+  background: transparent;
+  font-size: 14px;
+  color: grey;
+  cursor: pointer;
+  margin-bottom: 45px;
+}
+
+.description {
+  width: 450px;
+}
+
+.description p{
+  color: grey;
+  font-weight: 300;
+}

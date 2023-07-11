@@ -9,8 +9,8 @@ const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.links}>
         <div className={styles.linksOne}>
-          <Link>Гарантия</Link>
-          <Link>Доставка & Возвраты</Link>
+          <Link to={'/garant'}>Гарантия</Link>
+          <Link to={'/delivery'}>Доставка & Возвраты</Link>
         </div>
         <div className={styles.linksTwo}>
           <Link>
@@ -25,7 +25,7 @@ const Footer = () => {
         <p>Дарим 10% скидку за подписку</p>
         <div className={styles.email}>
           <input placeholder="Введите email" type="email" />
-          <button >Подписаться</button>
+          <button>Подписаться</button>
         </div>
       </div>
     </div>

@@ -4,9 +4,13 @@
   justify-content: space-between;
   padding: 15px 60px;
 }
-
-.headerCenter :first-child {
-  margin-right: 25px;
+.headerCenter {
+  width: 430px;
+  display: flex;
+  justify-content: space-between;
+}
+.headerCenter button:hover {
+  border-bottom: 2px solid grey;
 }
 
 .headerCenter a {
@@ -31,6 +35,56 @@
 
 .header a:hover {
   border-bottom: 2px solid black;
+}
+.headerBar {
+  background-color: white;
+  border: none;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.catalogBlock {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 20px;
+}
+.collectionsList {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(200, 200, 200);
+  /* border-radius: 10px; */
+  padding: 20px;
+  right: 770px;
+  top: 65px;
+}
+.categoriesList {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(200, 200, 200);
+  /* border-radius: 10px; */
+  padding: 20px;
+  right: 640px;
+  top: 65px;
+}
+
+.list {
+  text-transform: uppercase;
+  width: 160px;
+}
+.list p {
+  font-size: 13px;
+  color: #707070;
+}
+.listName {
+  color: #080b13;
+}
+.listName button {
+  font-size: 16px;
+  background-color: inherit;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .logo a {

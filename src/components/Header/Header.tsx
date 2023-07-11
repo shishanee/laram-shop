@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
+  getAllAcces,
   getAllCategories,
   getAllCollections,
 } from "../../features/catalogSlice";
@@ -23,6 +24,7 @@ const Header = ({theme, setTheme}) => {
 
   const categories = useSelector((state) => state.catalog.categories);
   const collections = useSelector((state) => state.catalog.collections);
+  const acces = useSelector((state) => state.catalog.acces);
 
   const dispatch = useDispatch();
 
@@ -30,6 +32,7 @@ const Header = ({theme, setTheme}) => {
     dispatch(getAllCategories());
     dispatch(getAllCollections());
     dispatch(getClothes());
+    dispatch(getAllAcces());
   }, []);
 
   function handleCollection() {
@@ -53,11 +56,6 @@ const Header = ({theme, setTheme}) => {
     }
     setIsOpenAccessory(!isOpenAccessory);
   }
-  // function handleBlur () {
-  //   setIsOpenCategory(false);
-  //   setIsOpenCollection(false);
-  //   setIsOpenAccessory(false);
-  // }
 
   const navigate = useNavigate();
   function handleNavigateCategories(id) {
@@ -66,43 +64,44 @@ const Header = ({theme, setTheme}) => {
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
-  function handleNavigateCollections (id) {
+  function handleNavigateCollections(id) {
     navigate(`collection/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
+
   function handleTheme () {
     setTheme(!theme)
+  }
+
+  function handleNavigateAcces(id) {
+    navigate(`acces/${id}`);
+    setIsOpenCategory(false);
+    setIsOpenCollection(false);
+    setIsOpenAccessory(false);
   }
   return (
     <div className={theme ? styles.header : (styles.header, styles.headerDark)}>
       <div className={styles.logo}>
-        <Link to={'/'}><h1>L A R A M</h1></Link>
+        <Link to={"/"}>
+          <h1>L A R A M</h1>
+        </Link>
       </div>
       <div className={styles.headerCenter}>
-        <button 
-          onClick={handleCollection} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleCollection} className={styles.headerBar}>
           КОЛЛЕКЦИИ
         </button>
-        <button 
-          onClick={handleCategory} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleCategory} className={styles.headerBar}>
           КАТЕГОРИИ
         </button>
-        <button 
-          onClick={handleAccessory} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleAccessory} className={styles.headerBar}>
           АКСЕССУАРЫ
         </button>
         <button className={styles.headerBar}>SALE</button>
       </div>
       <div className={styles.headerRight}>
-        <Link>КОРЗИНА</Link>
+        <Link to="/cart">КОРЗИНА</Link>
         <Link to={'/account'}>АККАУНТ</Link>
       <button className={theme ? styles.themeButton : styles.themeButtonDark} onClick={handleTheme}>
         <div id={styles.slider}><img src={theme ? sun : moon} alt='sun || moon' /></div>
@@ -145,6 +144,7 @@ const Header = ({theme, setTheme}) => {
           </div>
         </div>
       )}
+
     </div>
   );
 };

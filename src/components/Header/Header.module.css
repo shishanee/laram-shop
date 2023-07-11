@@ -15,10 +15,10 @@
 }
 
 
+.headerCenter button:hover {
+  border-bottom: 2px solid grey;
+}
 
-/* .headerCenter :first-child {
-  margin-right: 25px;
-} */
 
 .headerCenter a {
   text-decoration: none;
@@ -50,7 +50,6 @@
   cursor: pointer;
 }
 
-
 .catalogBlock {
   display: flex;
   flex-direction: column;
@@ -61,16 +60,24 @@
   position: absolute;
   background-color: white;
   box-shadow: 0px 0px 10px rgb(200, 200, 200);
-  /* border-radius: 10px; */
   padding: 20px;
   right: 770px;
   top: 65px;
 }
+
+.accesList {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(200, 200, 200);
+  padding: 20px;
+  right: 540px;
+  top: 65px;
+}
+
 .categoriesList {
   position: absolute;
   background-color: white;
   box-shadow: 0px 0px 10px rgb(200, 200, 200);
-  /* border-radius: 10px; */
   padding: 20px;
   right: 640px;
   top: 65px;
@@ -85,7 +92,7 @@
   color: #707070;
 }
 .listName {
-  color: #080B13;
+  color: #080b13;
 }
 .listName button {
   font-size: 16px;
@@ -100,6 +107,7 @@
   color: black;
   font-size: 40px;
 }
+
 
 
 

@@ -1,0 +1,26 @@
+.modalContent {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modalContent img {
+  display: flex;
+  margin: 100px auto;
+  width: 1000px;
+}
+
+.offButton {
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 70px;
+  right: 30px;
+  top: 0;
+  z-index: 999;
+}

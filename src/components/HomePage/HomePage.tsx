@@ -3,6 +3,7 @@ import photo from "../../../public/guys.png";
 import Clothes from "../Clothes/Clothes";
 
 const HomePage = ({theme, setTheme}) => {  
+
   return (
     <div className={theme ? styles.homePage : styles.homePageDark}>
       <div className={styles.cont}></div>

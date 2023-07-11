@@ -7,6 +7,7 @@ import CategoryPage from "./components/CategoryPage/CategoryPage";
 import CollectionPage from "./components/CollectionPage/CollectionPage";
 import * as React from "react";
 import Sign from "./components/Sign/Sign";
+import Cart from "./components/Cart";
 import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
 import Garant from "./components/Garant/Garant";
@@ -22,11 +23,10 @@ function App() {
         <Route path="/account" element={<Sign />} />
         <Route path="/auth" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path={`/oneClothes/:id`} element={<OneClothes />} />
-
         <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/collection/:id" element={<CollectionPage />} />
-
         <Route path="/garant" element={<Garant />} />
         <Route path="/delivery" element={<Delivery />} />
       </Routes>

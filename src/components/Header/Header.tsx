@@ -80,8 +80,8 @@ const Header = () => {
         <button className={styles.headerBar}>SALE</button>
       </div>
       <div className={styles.headerRight}>
-        <Link>КОРЗИНА</Link>
-        <Link to={"/account"}>АККАУНТ</Link>
+        <Link to="/cart">КОРЗИНА</Link>
+        <Link to={'/account'}>АККАУНТ</Link>
       </div>
 
       {isOpenCategory && (

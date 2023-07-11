@@ -7,7 +7,7 @@ import styles from "./SignIn.module.css";
 
 
 
-const SignUp = () => {
+const SignUp = ({theme, setTheme}) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,7 +30,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className={styles.mainBlockIn}>
+    <div className={theme ? styles.mainBlockIn : styles.mainBlockInDark}>
     <div className={styles.blockOne}>
       <div className={styles.form}>
         <p>Создайте аккаунт</p>

@@ -9,11 +9,17 @@ import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
+import { getClothes } from "../../features/clothesSlice";
+import sun from '../../../public/sun4.png'
+import moon from '../../../public/moon4.png'
 
-const Header = () => {
+
+const Header = ({theme, setTheme}) => {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenCollection, setIsOpenCollection] = useState(false);
   const [isOpenAccessory, setIsOpenAccessory] = useState(false);
+
+
 
   const categories = useSelector((state) => state.catalog.categories);
   const collections = useSelector((state) => state.catalog.collections);
@@ -23,6 +29,7 @@ const Header = () => {
   useEffect(() => {
     dispatch(getAllCategories());
     dispatch(getAllCollections());
+    dispatch(getClothes());
   }, []);
 
   function handleCollection() {
@@ -40,7 +47,7 @@ const Header = () => {
     setIsOpenCategory(!isOpenCategory);
   }
   function handleAccessory() {
-    if (isOpenCategory && isOpenCollection) {
+    if (isOpenCategory || isOpenCollection) {
       setIsOpenCategory(false);
       setIsOpenCollection(false);
     }
@@ -65,8 +72,11 @@ const Header = () => {
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
+  function handleTheme () {
+    setTheme(!theme)
+  }
   return (
-    <div className={styles.header}>
+    <div className={theme ? styles.header : (styles.header, styles.headerDark)}>
       <div className={styles.logo}>
         <Link to={'/'}><h1>L A R A M</h1></Link>
       </div>
@@ -94,12 +104,15 @@ const Header = () => {
       <div className={styles.headerRight}>
         <Link>КОРЗИНА</Link>
         <Link to={'/account'}>АККАУНТ</Link>
+      <button className={theme ? styles.themeButton : styles.themeButtonDark} onClick={handleTheme}>
+        <div id={styles.slider}><img src={theme ? sun : moon} alt='sun || moon' /></div>
+      </button>
       </div>
 
       {isOpenCategory && (
         <div className={styles.categoriesList}>
           <div className={styles.list}>
-            <p>КОЛЛЕКЦИИ</p>
+            <p>КАТЕГОРИИ</p>
             <div className={styles.catalogBlock}>
               {categories.map((item) => {
                 return (
@@ -132,24 +145,6 @@ const Header = () => {
           </div>
         </div>
       )}
-      {/* {isOpenAccessory && (
-        <div className={styles.collectionsList}>
-          <div className={styles.list}>
-            <p>КОЛЛЕКЦИИ</p>
-            <div className={styles.catalogBlock}>
-              {accessories.map((item) => {
-                return (
-                  <div className={styles.listName}>
-                    <button onClick={() => handleNavigate(item._id)}>
-                      {item.name}
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )} */}
     </div>
   );
 };

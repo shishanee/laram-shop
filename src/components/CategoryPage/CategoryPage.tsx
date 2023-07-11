@@ -2,18 +2,19 @@ import * as React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-const OneCategory = () => {
-  const categories = useSelector((state) => state.catalog.categories);
-  console.log(categories);
-  // console.log(collections);
-  const id = useParams().id
-  
+const CategoryPage = ({theme, setTheme}) => {
+  const clothes = useSelector((state) => state.clothes.clothes);
+  const id = useParams().id;
 
   return (
-    <div>
-      123
+    <div className={theme ? styles.categoryBack : styles.categoryBackDark}>
+      {clothes.map((item) => {
+        if (item.category._id === id) {
+          return <div>{item.name}</div>;
+        }
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default OneCategory
+export default CategoryPage;

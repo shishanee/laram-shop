@@ -56,8 +56,34 @@
   font-weight: 500;
   font-size: 15px;
   cursor: pointer;
+  border: none;
 }
 .email {
   display: flex;
   align-items: center;
+}
+
+
+
+
+.footerDark {
+  background: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footerDark a,
+.footerDark p {
+  color: black;
+}
+.footerDark button {
+  background-color: black;
+  color: white;
+  border: none;
+}
+.footerDark .email input {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
 }

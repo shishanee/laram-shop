@@ -18,25 +18,26 @@ import Delivery from "./components/Delivery/Delivery";
 
 
 function App() {
+  const [theme, setTheme] = React.useState(false)
   return (
     <>
-      <Header />
+      <Header theme={theme} setTheme={setTheme} />
       <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/account" element={<Sign />} />
-        <Route path="/auth" element={<SignUp />} />
-        <Route path="/login" element={<SignIn />} />
+        <Route path="/" element={<HomePage theme={theme} setTheme={setTheme} />}></Route>
+        <Route path="/account" element={<Sign theme={theme} setTheme={setTheme} />} />
+        <Route path="/auth" element={<SignUp theme={theme} setTheme={setTheme} />} />
+        <Route path="/login" element={<SignIn theme={theme} setTheme={setTheme} />} />
 
         <Route path='/category/:id' element={<CategoryPage/>}/>
         <Route path='/collection/:id' element={<CollectionPage/>}/>
         {/* <Route path="/catalog" element={<Catalog />} /> */}
 
 
-        <Route path="/garant" element={<Garant />} />
-        <Route path="/delivery" element={<Delivery />} />
+        <Route path="/garant" element={<Garant theme={theme} setTheme={setTheme} />} />
+        <Route path="/delivery" element={<Delivery theme={theme} setTheme={setTheme} />} />
 
       </Routes>
-      <Footer />
+      <Footer theme={theme} setTheme={setTheme} />
     </>
   );
 }

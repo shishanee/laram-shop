@@ -2,9 +2,9 @@ import photo from "../../../public/Foto.png";
 import styles from "./SignIn.module.css";
 import { Link } from "react-router-dom";
 
-const Sign = () => {
+const Sign = ({theme, setTheme}) => {
   return (
-    <div className={styles.mainBlockIn}>
+    <div className={theme ? styles.mainBlockIn : styles.mainBlockInDark}>
       <div className={styles.blockLinks}>
         <div className={styles.links}>
           <Link to={"/login"}>Войти</Link>

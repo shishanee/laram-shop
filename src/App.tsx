@@ -4,7 +4,7 @@ import SignUp from "./components/Sign/SignUp";
 import SignIn from "./components/Sign/SignIn";
 import Header from "./components/Header/Header";
 import Sign from "./components/Sign/Sign";
-import Cart from "./components/Cart/Cart";
+import Cart from "./components/Cart";
 import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
 

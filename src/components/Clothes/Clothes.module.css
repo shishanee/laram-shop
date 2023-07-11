@@ -12,7 +12,7 @@
   top: 50%;
   left: calc(50% - 26px);
   font-weight: 500;
-  z-index: 999;
+  z-index: 10;
 }
 
 .oneClothes img:hover{

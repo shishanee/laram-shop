@@ -13,6 +13,7 @@ import * as React from "react";
 import { getClothes } from "../../features/clothesSlice";
 import sun from '../../../public/sun4.png'
 import moon from '../../../public/moon4.png'
+import { oneCategory, oneCollection } from "../../features/clothesSlice";
 
 
 const Header = ({theme, setTheme}) => {
@@ -59,12 +60,14 @@ const Header = ({theme, setTheme}) => {
 
   const navigate = useNavigate();
   function handleNavigateCategories(id) {
+    dispatch(oneCategory(id))
     navigate(`category/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
   function handleNavigateCollections(id) {
+    dispatch(oneCollection(id))
     navigate(`collection/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);

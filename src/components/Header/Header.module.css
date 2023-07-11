@@ -63,6 +63,7 @@
   padding: 20px;
   right: 770px;
   top: 65px;
+  z-index: 999;
 }
 
 .accesList {
@@ -72,6 +73,7 @@
   padding: 20px;
   right: 540px;
   top: 65px;
+  z-index: 999;
 }
 
 .categoriesList {
@@ -81,6 +83,7 @@
   padding: 20px;
   right: 640px;
   top: 65px;
+  z-index: 999;
 }
 
 .list {

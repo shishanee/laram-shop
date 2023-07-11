@@ -1,20 +1,11 @@
 import * as React from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-
-const CategoryPage = ({theme, setTheme}) => {
-  const clothes = useSelector((state) => state.clothes.clothes);
-  const id = useParams().id;
-
+import Clothes from "../Clothes/Clothes";
+const OneCategory = () => {
   return (
-    <div className={theme ? styles.categoryBack : styles.categoryBackDark}>
-      {clothes.map((item) => {
-        if (item.category._id === id) {
-          return <div>{item.name}</div>;
-        }
-      })}
+    <div>
+      <Clothes />
     </div>
   );
 };
 
-export default CategoryPage;
+export default OneCategory;

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
+  getAllAcces,
   getAllCategories,
   getAllCollections,
 } from "../../features/catalogSlice";
@@ -17,12 +18,14 @@ const Header = () => {
 
   const categories = useSelector((state) => state.catalog.categories);
   const collections = useSelector((state) => state.catalog.collections);
+  const acces = useSelector((state) => state.catalog.acces);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllCategories());
     dispatch(getAllCollections());
+    dispatch(getAllAcces());
   }, []);
 
   function handleCollection() {
@@ -40,7 +43,7 @@ const Header = () => {
     setIsOpenCategory(!isOpenCategory);
   }
   function handleAccessory() {
-    if (isOpenCategory && isOpenCollection) {
+    if (isOpenCategory || isOpenCollection) {
       setIsOpenCategory(false);
       setIsOpenCollection(false);
     }
@@ -60,6 +63,14 @@ const Header = () => {
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
+  function handleNavigateAcces(id) {
+    navigate(`acces/${id}`);
+    setIsOpenCategory(false);
+    setIsOpenCollection(false);
+    setIsOpenAccessory(false);
+  }
+
+  
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -87,7 +98,7 @@ const Header = () => {
       {isOpenCategory && (
         <div className={styles.categoriesList}>
           <div className={styles.list}>
-            <p>КОЛЛЕКЦИИ</p>
+            <p>КАТЕГОРИИ</p>
             <div className={styles.catalogBlock}>
               {categories.map((item) => {
                 return (
@@ -120,15 +131,15 @@ const Header = () => {
           </div>
         </div>
       )}
-      {/* {isOpenAccessory && (
-        <div className={styles.collectionsList}>
+      {isOpenAccessory && (
+        <div className={styles.accesList}>
           <div className={styles.list}>
-            <p>КОЛЛЕКЦИИ</p>
+            <p>АКСЕССУАРЫ</p>
             <div className={styles.catalogBlock}>
-              {accessories.map((item) => {
+              {acces.map((item) => {
                 return (
                   <div className={styles.listName}>
-                    <button onClick={() => handleNavigate(item._id)}>
+                    <button onClick={() => handleNavigateAcces(item._id)}>
                       {item.name}
                     </button>
                   </div>
@@ -137,7 +148,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

@@ -58,6 +58,16 @@
   right: 770px;
   top: 65px;
 }
+
+.accesList {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgb(200, 200, 200);
+  padding: 20px;
+  right: 540px;
+  top: 65px;
+}
+
 .categoriesList {
   position: absolute;
   background-color: white;

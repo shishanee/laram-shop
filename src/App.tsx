@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 import Garant from "./components/Garant/Garant";
 import Delivery from "./components/Delivery/Delivery";
 import OneClothes from "./components/OneClothes/OneClothes";
+import Acces from "./components/Acces/Acces";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path={`/oneClothes/:id`} element={<OneClothes />} />
         <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/collection/:id" element={<CollectionPage />} />
+        <Route path="/acces/:id" element={<Acces />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/delivery" element={<Delivery />} />
       </Routes>

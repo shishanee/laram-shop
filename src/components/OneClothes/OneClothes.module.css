@@ -12,7 +12,14 @@
   height: 70px;
   margin: 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
+
+.allImages img:hover {
+  scale: 1.2;
+}
+
+
 
 .allImages {
   display: flex;

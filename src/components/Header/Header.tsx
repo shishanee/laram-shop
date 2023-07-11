@@ -46,11 +46,6 @@ const Header = () => {
     }
     setIsOpenAccessory(!isOpenAccessory);
   }
-  // function handleBlur () {
-  //   setIsOpenCategory(false);
-  //   setIsOpenCollection(false);
-  //   setIsOpenAccessory(false);
-  // }
 
   const navigate = useNavigate();
   function handleNavigateCategories(id) {
@@ -59,7 +54,7 @@ const Header = () => {
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
-  function handleNavigateCollections (id) {
+  function handleNavigateCollections(id) {
     navigate(`collection/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
@@ -68,32 +63,25 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
-        <Link to={'/'}><h1>L A R A M</h1></Link>
+        <Link to={"/"}>
+          <h1>L A R A M</h1>
+        </Link>
       </div>
       <div className={styles.headerCenter}>
-        <button 
-          onClick={handleCollection} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleCollection} className={styles.headerBar}>
           КОЛЛЕКЦИИ
         </button>
-        <button 
-          onClick={handleCategory} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleCategory} className={styles.headerBar}>
           КАТЕГОРИИ
         </button>
-        <button 
-          onClick={handleAccessory} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleAccessory} className={styles.headerBar}>
           АКСЕССУАРЫ
         </button>
         <button className={styles.headerBar}>SALE</button>
       </div>
       <div className={styles.headerRight}>
         <Link>КОРЗИНА</Link>
-        <Link to={'/account'}>АККАУНТ</Link>
+        <Link to={"/account"}>АККАУНТ</Link>
       </div>
 
       {isOpenCategory && (

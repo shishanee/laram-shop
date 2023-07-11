@@ -41,7 +41,7 @@ label {
   margin: 10px 0;
   padding: 0 15px;
 }
-button{
+.deliveryButtons button{
   background-color: transparent;
   border: 1px solid black;
   font-size: 14px;

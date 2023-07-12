@@ -1,6 +1,8 @@
 import styles from "./HomePage.module.css";
 import photo from "../../../public/guys.png";
 import Clothes from "../Clothes/Clothes";
+import * as React from "react";
+
 
 const HomePage = ({theme, setTheme}) => {  
 

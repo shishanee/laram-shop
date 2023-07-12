@@ -1,5 +1,6 @@
 import styles from "./Garant.module.css";
 import photo from "../../../public/photoOne.jpg";
+import * as React from "react";
 
 const Garant = ({theme, setTheme}) => {
   return (

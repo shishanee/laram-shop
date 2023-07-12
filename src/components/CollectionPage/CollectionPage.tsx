@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { oneCollection } from "../../features/clothesSlice";
 import styles from "./CollectionPage.module.css";
 
@@ -13,6 +13,13 @@ const OneCategory = () => {
     dispatch(oneCollection(id));
   }, []);
 
+
+  const navigate = useNavigate();
+
+  const handleNavigateClick = (id) => {
+    navigate(`/oneClothes/${id}`);
+  };
+  
   return (
     <div className={styles.allClothes}>
       {collection.map((item) => {

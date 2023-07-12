@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { oneAccessory } from "../../features/clothesSlice";
 import styles from "./Accessory.module.css";
@@ -12,6 +12,13 @@ const AccessoryPage = () => {
   React.useEffect(() => {
     dispatch(oneAccessory(id));
   }, []);
+
+ const navigate = useNavigate();
+
+  const handleNavigateClick = (id) => {
+    navigate(`/oneClothes/${id}`);
+  };
+
   return (
     <div className={styles.allClothes}>
       {accessory.map((item) => {

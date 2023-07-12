@@ -28,6 +28,31 @@ export const getUserCart = createAsyncThunk(
   }
 );
 
+export const addCloth = createAsyncThunk(
+  "cart/fetchAddCloth",
+  async ({ id, size }, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/cart-add-cloth/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+        body: JSON.stringify({
+          size,
+        }),
+      });
+      const json = await res.json();
+      if (json.error) {
+        return thunkAPI.rejectWithValue(json.error);
+      }
+      return json;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,

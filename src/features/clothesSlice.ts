@@ -2,6 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   clothes: [],
+  accessory: [],
+  category: [],
+  collection: [],
   oneClothes: {},
   error: null,
   loading: true,
@@ -22,9 +25,21 @@ export const oneClothes = createAsyncThunk(
 
 export const oneCollection = createAsyncThunk(
   "one/collection",
-  async (id , thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:4000/collection/${id}`);
+      const data = res.json();
+      return data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const oneAccessory = createAsyncThunk(
+  "one/Accessory",
+  async (id, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/accessory/${id}`);
       const data = res.json();
       return data;
     } catch (error) {
@@ -35,7 +50,7 @@ export const oneCollection = createAsyncThunk(
 
 export const oneCategory = createAsyncThunk(
   "one/category",
-  async (id , thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:4000/category/${id}`);
       const data = res.json();
@@ -75,17 +90,20 @@ const cartSlice = createSlice({
       })
       .addCase(oneClothes.fulfilled, (state, action) => {
         state.oneClothes = action.payload;
-        state.loading = false
+        state.loading = false;
       })
       .addCase(oneClothes.pending, (state) => {
-        state.loading = true
+        state.loading = true;
       })
-      .addCase(oneCollection.fulfilled,(state,action) => {
-         state.clothes = action.payload
+      .addCase(oneCollection.fulfilled, (state, action) => {
+        state.collection = action.payload;
       })
-      .addCase(oneCategory.fulfilled,(state,action) => {
-         state.category = action.payload
+      .addCase(oneCategory.fulfilled, (state, action) => {
+        state.category = action.payload;
       })
+      .addCase(oneAccessory.fulfilled, (state, action) => {
+        state.accessory = action.payload;
+      });
   },
 });
 

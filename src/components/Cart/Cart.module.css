@@ -1,8 +1,8 @@
 .main {
   padding: 0px 30px;
-  margin: 30px;
   display: flex;
   justify-content: space-between;
+  padding-top: 95px;
 }
 .infoBlock {
   width: 50%;
@@ -23,6 +23,7 @@ label {
   width: 300px;
 }
 .focusButton {
+
   background-color: black !important;
   color: white;
 }
@@ -118,6 +119,11 @@ label {
   width: 15px;
   justify-content: center;
 }
+.orderButton {
+  background-color: black;
+  color: white;
+}
+
 .orderButtonDisabled {
   background-color: rgba(206, 203, 203, 0.1);
   color: rgba(0, 0, 0, 0.6);

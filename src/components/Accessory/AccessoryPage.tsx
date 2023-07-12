@@ -1,27 +1,20 @@
-import { useEffect } from "react";
+import * as React from "react";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getClothes } from "../../features/clothesSlice";
-import styles from "./Clothes.module.css";
-import { useNavigate } from "react-router-dom";
+import { oneAccessory } from "../../features/clothesSlice";
+import styles from "./Accessory.module.css";
 
-const Clothes = () => {
-  const clothes = useSelector((state) => state.clothes.clothes);
-  console.log(clothes);
+const AccessoryPage = () => {
+  const accessory = useSelector((state) => state.clothes.accessory);
+
+  const { id } = useParams();
   const dispatch = useDispatch();
-
-  const navigate = useNavigate();
-
-  const handleNavigateClick = (id) => {
-    navigate(`/oneClothes/${id}`);
-  };
-
-  useEffect(() => {
-    dispatch(getClothes());
+  React.useEffect(() => {
+    dispatch(oneAccessory(id));
   }, []);
-
   return (
     <div className={styles.allClothes}>
-      {clothes.map((item) => {
+      {accessory.map((item) => {
         return (
           <div
             onClick={() => handleNavigateClick(item._id)}
@@ -42,4 +35,4 @@ const Clothes = () => {
   );
 };
 
-export default Clothes;
+export default AccessoryPage;

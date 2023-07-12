@@ -11,17 +11,14 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
 import { getClothes } from "../../features/clothesSlice";
-import sun from '../../../public/sun4.png'
-import moon from '../../../public/moon4.png'
-import { oneCategory, oneCollection } from "../../features/clothesSlice";
+import sun from "../../../public/sun4.png";
+import moon from "../../../public/moon4.png";
 
-
-const Header = ({theme, setTheme}) => {
+const Header = ({ theme, setTheme }) => {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenCollection, setIsOpenCollection] = useState(false);
   const [isOpenAccessory, setIsOpenAccessory] = useState(false);
-
-
+  const token = useSelector((state) => state.application.token);
 
   const categories = useSelector((state) => state.catalog.categories);
   const collections = useSelector((state) => state.catalog.collections);
@@ -60,26 +57,24 @@ const Header = ({theme, setTheme}) => {
 
   const navigate = useNavigate();
   function handleNavigateCategories(id) {
-    dispatch(oneCategory(id))
     navigate(`category/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
   function handleNavigateCollections(id) {
-    dispatch(oneCollection(id))
     navigate(`collection/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
 
-  function handleTheme () {
-    setTheme(!theme)
+  function handleTheme() {
+    setTheme(!theme);
   }
 
   function handleNavigateAcces(id) {
-    navigate(`acces/${id}`);
+    navigate(`accessory/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
@@ -105,10 +100,19 @@ const Header = ({theme, setTheme}) => {
       </div>
       <div className={styles.headerRight}>
         <Link to="/cart">КОРЗИНА</Link>
-        <Link to={'/account'}>АККАУНТ</Link>
-      <button className={theme ? styles.themeButton : styles.themeButtonDark} onClick={handleTheme}>
-        <div id={styles.slider}><img src={theme ? sun : moon} alt='sun || moon' /></div>
-      </button>
+        {!token ? (
+          <Link to={"/account"}>АККАУНТ</Link>
+        ) : (
+          <Link to={"/profile"}>ПРОФИЛЬ</Link>
+        )}
+        <button
+          className={theme ? styles.themeButton : styles.themeButtonDark}
+          onClick={handleTheme}
+        >
+          <div id={styles.slider}>
+            <img src={theme ? sun : moon} alt="sun || moon" />
+          </div>
+        </button>
       </div>
 
       {isOpenCategory && (
@@ -147,7 +151,7 @@ const Header = ({theme, setTheme}) => {
           </div>
         </div>
       )}
-           {isOpenAccessory && (
+      {isOpenAccessory && (
         <div className={styles.accesList}>
           <div className={styles.list}>
             <p>АКСЕССУАРЫ</p>
@@ -165,7 +169,6 @@ const Header = ({theme, setTheme}) => {
           </div>
         </div>
       )}
-
     </div>
   );
 };

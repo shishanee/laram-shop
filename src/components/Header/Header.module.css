@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  /* position: fixed; */
+  position: fixed;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -14,11 +14,9 @@
   justify-content: space-between;
 }
 
-
 .headerCenter button:hover {
   border-bottom: 2px solid grey;
 }
-
 
 .headerCenter a {
   text-decoration: none;
@@ -111,18 +109,11 @@
   font-size: 40px;
 }
 
-
-
-
-
-
-
-
 /* dark theme */
 
 .headerDark {
   width: 100%;
-  /* position: fixed; */
+  position: fixed;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -136,19 +127,12 @@
   background-color: black;
   color: white;
 }
-.headerDark button:hover {
-  /* border-bottom: 1px solid white; */
-}
+
 .headerCenterDark {
   width: 430px;
   display: flex;
   justify-content: space-between;
 }
-
-
-
-
-
 
 .headerDark .categoriesList,
 .headerDark .collectionsList {
@@ -204,4 +188,3 @@
   height: 20px;
   border-radius: 50%;
 }
-

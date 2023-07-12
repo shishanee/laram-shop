@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
+  getAllAcces,
   getAllCategories,
   getAllCollections,
 } from "../../features/catalogSlice";
@@ -9,20 +10,27 @@ import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
+import { getClothes } from "../../features/clothesSlice";
+import sun from "../../../public/sun4.png";
+import moon from "../../../public/moon4.png";
 
-const Header = () => {
+const Header = ({ theme, setTheme }) => {
   const [isOpenCategory, setIsOpenCategory] = useState(false);
   const [isOpenCollection, setIsOpenCollection] = useState(false);
   const [isOpenAccessory, setIsOpenAccessory] = useState(false);
+  const token = useSelector((state) => state.application.token);
 
   const categories = useSelector((state) => state.catalog.categories);
   const collections = useSelector((state) => state.catalog.collections);
+  const acces = useSelector((state) => state.catalog.acces);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllCategories());
     dispatch(getAllCollections());
+    dispatch(getClothes());
+    dispatch(getAllAcces());
   }, []);
 
   function handleCollection() {
@@ -40,17 +48,12 @@ const Header = () => {
     setIsOpenCategory(!isOpenCategory);
   }
   function handleAccessory() {
-    if (isOpenCategory && isOpenCollection) {
+    if (isOpenCategory || isOpenCollection) {
       setIsOpenCategory(false);
       setIsOpenCollection(false);
     }
     setIsOpenAccessory(!isOpenAccessory);
   }
-  // function handleBlur () {
-  //   setIsOpenCategory(false);
-  //   setIsOpenCollection(false);
-  //   setIsOpenAccessory(false);
-  // }
 
   const navigate = useNavigate();
   function handleNavigateCategories(id) {
@@ -59,47 +62,63 @@ const Header = () => {
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
-  function handleNavigateCollections (id) {
+  function handleNavigateCollections(id) {
     navigate(`collection/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
+
+  function handleTheme() {
+    setTheme(!theme);
+  }
+
+  function handleNavigateAcces(id) {
+    navigate(`accessory/${id}`);
+    setIsOpenCategory(false);
+    setIsOpenCollection(false);
+    setIsOpenAccessory(false);
+  }
   return (
-    <div className={styles.header}>
+    <div className={theme ? styles.header : (styles.header, styles.headerDark)}>
       <div className={styles.logo}>
-        <Link to={'/'}><h1>L A R A M</h1></Link>
+        <Link to={"/"}>
+          <h1>L A R A M</h1>
+        </Link>
       </div>
       <div className={styles.headerCenter}>
-        <button 
-          onClick={handleCollection} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleCollection} className={styles.headerBar}>
           КОЛЛЕКЦИИ
         </button>
-        <button 
-          onClick={handleCategory} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleCategory} className={styles.headerBar}>
           КАТЕГОРИИ
         </button>
-        <button 
-          onClick={handleAccessory} className={styles.headerBar}
-          // onBlur={handleBlur}
-          >
+        <button onClick={handleAccessory} className={styles.headerBar}>
           АКСЕССУАРЫ
         </button>
         <button className={styles.headerBar}>SALE</button>
       </div>
       <div className={styles.headerRight}>
-        <Link>КОРЗИНА</Link>
-        <Link to={'/account'}>АККАУНТ</Link>
+        <Link to="/cart">КОРЗИНА</Link>
+        {!token ? (
+          <Link to={"/account"}>АККАУНТ</Link>
+        ) : (
+          <Link to={"/profile"}>ПРОФИЛЬ</Link>
+        )}
+        <button
+          className={theme ? styles.themeButton : styles.themeButtonDark}
+          onClick={handleTheme}
+        >
+          <div id={styles.slider}>
+            <img src={theme ? sun : moon} alt="sun || moon" />
+          </div>
+        </button>
       </div>
 
       {isOpenCategory && (
         <div className={styles.categoriesList}>
           <div className={styles.list}>
-            <p>КОЛЛЕКЦИИ</p>
+            <p>КАТЕГОРИИ</p>
             <div className={styles.catalogBlock}>
               {categories.map((item) => {
                 return (
@@ -132,15 +151,15 @@ const Header = () => {
           </div>
         </div>
       )}
-      {/* {isOpenAccessory && (
-        <div className={styles.collectionsList}>
+      {isOpenAccessory && (
+        <div className={styles.accesList}>
           <div className={styles.list}>
-            <p>КОЛЛЕКЦИИ</p>
+            <p>АКСЕССУАРЫ</p>
             <div className={styles.catalogBlock}>
-              {accessories.map((item) => {
+              {acces.map((item) => {
                 return (
                   <div className={styles.listName}>
-                    <button onClick={() => handleNavigate(item._id)}>
+                    <button onClick={() => handleNavigateAcces(item._id)}>
                       {item.name}
                     </button>
                   </div>
@@ -149,7 +168,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

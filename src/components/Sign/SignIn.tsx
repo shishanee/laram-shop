@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import photo from "../../../public/Foto.png";
 import styles from "./SignIn.module.css";
 
-const SignIn = () => {
+const SignIn = ({theme, setTheme}) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,7 +25,7 @@ const SignIn = () => {
     navigate("/");
   };
   return (
-    <div className={styles.mainBlockIn}>
+    <div className={theme ? styles.mainBlockIn : styles.mainBlockInDark}>
       <div className={styles.blockOne}>
         <div className={styles.form}>
           <p>Войдите в аккаунт</p>

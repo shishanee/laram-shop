@@ -1,19 +1,39 @@
 import * as React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { oneCategory } from "../../features/clothesSlice";
 import { useParams } from "react-router-dom";
-
+import styles from "./CategoryPage.module.css";
 const OneCategory = () => {
-  const categories = useSelector((state) => state.catalog.categories);
-  console.log(categories);
-  // console.log(collections);
-  const id = useParams().id
-  
+  const category = useSelector((state) => state.clothes.category);
 
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(oneCategory(id));
+  }, []);
   return (
     <div>
-      123
+      <div className={styles.allClothes}>
+        {category.map((item) => {
+          return (
+            <div
+              onClick={() => handleNavigateClick(item._id)}
+              className={styles.oneClothes}
+            >
+              <div className={styles.image}>
+                <img
+                  src={`http://localhost:4000/${item.image[0]?.path}`}
+                  alt=""
+                />
+              </div>
+              <h5>{item.name}</h5>
+              <h4>{item.price}₽</h4>
+            </div>
+          );
+        })}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default OneCategory
+export default OneCategory;

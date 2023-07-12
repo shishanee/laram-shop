@@ -23,7 +23,8 @@ label {
   width: 300px;
 }
 .focusButton {
-  background-color: black;
+
+  background-color: black !important;
   color: white;
 }
 .paymentButtons {
@@ -46,7 +47,6 @@ label {
   border: 1px solid black;
   font-size: 14px;
   font-weight: 500;
-  width: 100%;
   height: 50px;
   cursor: pointer;
 }
@@ -123,6 +123,7 @@ label {
   background-color: black;
   color: white;
 }
+
 .orderButtonDisabled {
   background-color: rgba(206, 203, 203, 0.1);
   color: rgba(0, 0, 0, 0.6);

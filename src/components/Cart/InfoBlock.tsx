@@ -111,7 +111,7 @@ const InfoBlock = () => {
       </article>
       <article className={styles.order}>
         <button
-          className={checkbox ? styles.orderButton : styles.orderButtonDisabled}
+          className={checkbox ? styles.focusButton : styles.orderButtonDisabled}
           disabled={checkbox}
         >
           Заказать

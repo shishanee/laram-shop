@@ -57,7 +57,6 @@ const catologSlice = createSlice({
       })
       ///////////////// getAllCollections /////////////////
       .addCase(getAllCollections.fulfilled, (state, action) => {
-        
         state.collections = action.payload;
       })
       .addCase(getAllAcces.fulfilled, (state, action) => {

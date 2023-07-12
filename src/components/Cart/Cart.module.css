@@ -1,8 +1,8 @@
 .main {
   padding: 0px 30px;
-  margin: 30px;
   display: flex;
   justify-content: space-between;
+  padding-top: 95px;
 }
 .infoBlock {
   width: 50%;
@@ -22,7 +22,7 @@ label {
 .deliveryButtons button {
   width: 300px;
 }
-.focusButton{
+.focusButton {
   background-color: black;
   color: white;
 }
@@ -41,7 +41,7 @@ label {
   margin: 10px 0;
   padding: 0 15px;
 }
-.deliveryButtons button{
+button {
   background-color: transparent;
   border: 1px solid black;
   font-size: 14px;
@@ -53,7 +53,7 @@ label {
 article {
   padding-bottom: 30px;
 }
-.city{
+.city {
   width: 300px;
 }
 .marginButton {
@@ -113,19 +113,19 @@ article {
   float: right;
   line-height: 1.7;
 }
-.cursorPointer{
+.cursorPointer {
   cursor: pointer;
   display: inline-flex;
   width: 15px;
   justify-content: center;
 }
-.orderButton{
+.orderButton {
   background-color: black;
   color: white;
 }
-.orderButtonDisabled{
-  background-color: rgba(206, 203, 203, 0.100);
-  color: rgba(0, 0, 0, 0.600);
-  border: 1px solid rgba(0, 0, 0, 0.100);
+.orderButtonDisabled {
+  background-color: rgba(206, 203, 203, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: default;
 }

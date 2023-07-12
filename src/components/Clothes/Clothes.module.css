@@ -4,18 +4,16 @@
   transition: 0.3s;
 }
 
-.oneClothes h4{
+.oneClothes h4 {
   position: absolute;
   color: white;
-  /* bottom: 280px; */
-  /* left: 160px; */
   top: 50%;
   left: calc(50% - 26px);
   font-weight: 500;
   z-index: 10;
 }
 
-.oneClothes img:hover{
+.oneClothes img:hover {
   scale: 103%;
 }
 
@@ -29,6 +27,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-top: 85px;
 }
 
 .oneClothes h5 {

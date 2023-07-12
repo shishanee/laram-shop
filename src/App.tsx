@@ -13,27 +13,44 @@ import Footer from "./components/Footer/Footer";
 import Garant from "./components/Garant/Garant";
 import Delivery from "./components/Delivery/Delivery";
 import OneClothes from "./components/OneClothes/OneClothes";
-import Acces from "./components/Acces/Acces";
+import Profile from "./components/Profile/Profile";
+import AccessoryPage from "./components/Accessory/AccessoryPage";
 
 function App() {
-  const [theme, setTheme] = React.useState(false)
+  const [theme, setTheme] = React.useState(true);
   return (
     <>
       <Header theme={theme} setTheme={setTheme} />
       <Routes>
+        <Route
+          path="/"
+          element={<HomePage theme={theme} setTheme={setTheme} />}
+        ></Route>
+        <Route
+          path="/account"
+          element={<Sign theme={theme} setTheme={setTheme} />}
+        />
+        <Route
+          path="/auth"
+          element={<SignUp theme={theme} setTheme={setTheme} />}
+        />
+        <Route
+          path="/login"
+          element={<SignIn theme={theme} setTheme={setTheme} />}
+        />
 
-        <Route path="/" element={<HomePage theme={theme} setTheme={setTheme} />}></Route>
-        <Route path="/account" element={<Sign theme={theme} setTheme={setTheme} />} />
-        <Route path="/auth" element={<SignUp theme={theme} setTheme={setTheme} />} />
-        <Route path="/login" element={<SignIn theme={theme} setTheme={setTheme} />} />
+        <Route path="/category/:id" element={<CategoryPage />} />
+        <Route path="/collection/:id" element={<CollectionPage />} />
+        <Route path="/profile" element={<Profile />} />
 
-        <Route path='/category/:id' element={<CategoryPage/>}/>
-        <Route path='/collection/:id' element={<CollectionPage/>}/>
-        {/* <Route path="/catalog" element={<Catalog />} /> */}
-
-
-        <Route path="/garant" element={<Garant theme={theme} setTheme={setTheme} />} />
-        <Route path="/delivery" element={<Delivery theme={theme} setTheme={setTheme} />} />
+        <Route
+          path="/garant"
+          element={<Garant theme={theme} setTheme={setTheme} />}
+        />
+        <Route
+          path="/delivery"
+          element={<Delivery theme={theme} setTheme={setTheme} />}
+        />
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/account" element={<Sign />} />
         <Route path="/auth" element={<SignUp />} />
@@ -42,10 +59,9 @@ function App() {
         <Route path={`/oneClothes/:id`} element={<OneClothes />} />
         <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/collection/:id" element={<CollectionPage />} />
-        <Route path="/acces/:id" element={<Acces />} />
+        <Route path="/accessory/:id" element={<AccessoryPage />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/delivery" element={<Delivery />} />
-
       </Routes>
       <Footer theme={theme} setTheme={setTheme} />
     </>

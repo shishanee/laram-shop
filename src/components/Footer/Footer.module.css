@@ -16,6 +16,10 @@
   justify-content: space-around;
   align-items: center;
 }
+.footer p {
+  color: white;
+  margin-bottom: 10px;
+}
 
 .linksOne {
   display: flex;
@@ -64,8 +68,6 @@
 }
 
 
-
-
 .footerDark {
   background: white;
   padding: 20px;
@@ -76,6 +78,8 @@
 .footerDark a,
 .footerDark p {
   color: black;
+  margin-bottom: 10px;
+
 }
 .footerDark button {
   background-color: black;

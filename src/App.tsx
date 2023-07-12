@@ -22,6 +22,7 @@ function App() {
     <>
       <Header theme={theme} setTheme={setTheme} />
       <Routes>
+        <Route path="/personal" element={<Profile />}/>
         <Route
           path="/"
           element={<HomePage theme={theme} setTheme={setTheme} />}
@@ -41,7 +42,6 @@ function App() {
 
         <Route path="/category/:id" element={<CategoryPage />} />
         <Route path="/collection/:id" element={<CollectionPage />} />
-        <Route path="/profile" element={<Profile />} />
 
         <Route
           path="/garant"

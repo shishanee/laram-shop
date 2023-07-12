@@ -10,7 +10,12 @@ import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as React from "react";
-import { getClothes } from "../../features/clothesSlice";
+import {
+  getClothes,
+  oneAccessory,
+  oneCategory,
+  oneCollection,
+} from "../../features/clothesSlice";
 import sun from "../../../public/sun4.png";
 import moon from "../../../public/moon4.png";
 
@@ -58,12 +63,15 @@ const Header = ({ theme, setTheme }) => {
   const navigate = useNavigate();
   function handleNavigateCategories(id) {
     navigate(`category/${id}`);
+    dispatch(oneCategory(id));
+
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
   function handleNavigateCollections(id) {
     navigate(`collection/${id}`);
+    dispatch(oneCollection(id));
     setIsOpenCategory(false);
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
@@ -74,6 +82,7 @@ const Header = ({ theme, setTheme }) => {
   }
 
   function handleNavigateAcces(id) {
+    dispatch(oneAccessory(id));
     navigate(`accessory/${id}`);
     setIsOpenCategory(false);
     setIsOpenCollection(false);

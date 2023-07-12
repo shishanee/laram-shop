@@ -9,7 +9,6 @@ import SizeTable from "../SizeTable/SizeTable";
 const OneClothes = () => {
   const loading = useSelector((state) => state.clothes.loading);
   const [activeModal,setActiveModal] = useState(false)
-  console.log(activeModal)
 
   const id = useParams();
   const dispatch = useDispatch();
@@ -58,9 +57,9 @@ const OneClothes = () => {
       <div className={styles.textBlock}>
         <h1>{oneClothe.name}</h1>
         <h4>{oneClothe.price} ₽</h4>
-        <div className={styles.sizeBlock}>
+       {!oneClothe.accessory && <div className={styles.sizeBlock}>
           <h3>Размер:</h3>
-          {!loading && (
+          {!loading &&  (
             <div className={styles.sizes}>
               {oneClothe.size.map((item) => {
                 return <button>{item.size}</button>;
@@ -72,12 +71,12 @@ const OneClothes = () => {
               <img src={size} alt="" /> <h4>Таблица Размеров</h4>
             </button>
           </div>
+        </div>}
           <button className={styles.addCart}>Добавить в корзину</button>
           <div className={styles.description}>
             <h3>Описание</h3>
             <p>{oneClothe.description}</p>
           </div>
-        </div>
       </div>
     </div>
   );

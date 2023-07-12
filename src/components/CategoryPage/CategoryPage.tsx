@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { oneCategory } from "../../features/clothesSlice";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./CategoryPage.module.css";
 const OneCategory = () => {
   const category = useSelector((state) => state.clothes.category);
@@ -11,6 +11,12 @@ const OneCategory = () => {
   React.useEffect(() => {
     dispatch(oneCategory(id));
   }, []);
+
+  const navigate = useNavigate();
+
+  const handleNavigateClick = (id) => {
+    navigate(`/oneClothes/${id}`);
+  };
   return (
     <div>
       <div className={styles.allClothes}>

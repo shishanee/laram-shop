@@ -15,6 +15,7 @@ import HomePage from "./components/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
 import Garant from "./components/Garant/Garant";
 import Delivery from "./components/Delivery/Delivery";
+import Profile from "./components/Profile/Profile";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path="/personal" element={<Profile />}/>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/account" element={<Sign />} />
         <Route path="/auth" element={<SignUp />} />

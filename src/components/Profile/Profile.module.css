@@ -1,0 +1,16 @@
+.mainProfile{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.side{
+    display: flex;
+    flex-direction: column;
+}
+
+.profileSide {
+    margin-bottom: 100px;
+    margin-left: 50px;
+    font-size: 13px;
+}

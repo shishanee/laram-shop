@@ -217,6 +217,9 @@ const cartSlice = createSlice({
           return true;
         });
         state.cart.cart = newCart;
+      })
+      .addCase(fetchBuyCloths.fulfilled, (state) => {
+        state.cart.cart = [];
       });
   },
 });

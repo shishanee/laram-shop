@@ -1,18 +1,36 @@
 import React from "react";
 import styles from "./Cart.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+  fetchMinusCloth,
+  fetchPlusCloth,
+  fetchRemoveCloth,
+} from "../../features/cartSlice";
 
 const CartBlock = ({
+  id,
   image,
   name,
-  collections,
+  collection,
   size,
   color,
   amount,
   price,
 }) => {
-  console.log(image);
-  
+  const dispatch = useDispatch();
+
+  const plusCloth = (id) => {
+    dispatch(fetchPlusCloth({ id, size }));
+  };
+
+  const minusCloth = (id) => {
+    dispatch(fetchMinusCloth({ id, size }));
+  };
+
+  const removeCloth = (id) => {
+    dispatch(fetchRemoveCloth({ id, size }));
+  };
+
   return (
     <section className={styles.cartBlock}>
       <article className={styles.cloth}>
@@ -20,7 +38,8 @@ const CartBlock = ({
         <div className={styles.clothInfo}>
           <div>{name}</div>
           <div className={styles.grayColor}>
-            Коллекция: <span className={styles.paddingHorizontal}>{collections}</span>
+            Коллекция:{" "}
+            <span className={styles.paddingHorizontal}>{collection}</span>
           </div>
           <div
             className={`${styles.characteristics} ${styles.marginVertically}`}
@@ -48,9 +67,19 @@ const CartBlock = ({
               <span
                 className={`${styles.boldText} ${styles.paddingHorizontal}`}
               >
-                <span className={styles.cursorPointer}>-</span>
+                <span
+                  className={styles.cursorPointer}
+                  onClick={() => minusCloth(id)}
+                >
+                  -
+                </span>
                 <span className={styles.paddingHorizontal}>{amount}</span>
-                <span className={styles.cursorPointer}>+</span>
+                <span
+                  className={styles.cursorPointer}
+                  onClick={() => plusCloth(id)}
+                >
+                  +
+                </span>
               </span>
             </div>
           </div>
@@ -60,10 +89,15 @@ const CartBlock = ({
               <span
                 className={`${styles.boldText} ${styles.paddingHorizontal}`}
               >
-                {price}
+                {price} ₽
               </span>
             </span>
-            <span className={styles.grayColor}>Удалить</span>
+            <span
+              className={`${styles.grayColor} ${styles.deleteButton}`}
+              onClick={() => removeCloth(id)}
+            >
+              Удалить
+            </span>
           </div>
         </div>
       </article>

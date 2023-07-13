@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styles from "./Cart.module.css";
 import { Checkbox } from "antd";
+import { setDelivery } from "../../features/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const InfoBlock = () => {
+  const dispatch = useDispatch();
+  const delivery = useSelector((state) => state.cart.delivery);
   const [checkbox, setCheckbox] = useState(false);
-  const [delivery, setDelivery] = useState(true);
-  const [payment, setPayment] = useState(true);
 
+  const [payment, setPayment] = useState(true);
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
@@ -28,13 +31,13 @@ const InfoBlock = () => {
         <div className={styles.marginButton}>Способ доставки</div>
         <div className={styles.deliveryButtons}>
           <button
-            onClick={() => setDelivery(true)}
+            onClick={() => dispatch(setDelivery(true))}
             className={delivery ? styles.focusButton : ""}
           >
             В магазин
           </button>
           <button
-            onClick={() => setDelivery(false)}
+            onClick={() => dispatch(setDelivery(false))}
             className={!delivery ? styles.focusButton : ""}
           >
             До двери

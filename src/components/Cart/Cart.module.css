@@ -23,7 +23,6 @@ label {
   width: 300px;
 }
 .focusButton {
-
   background-color: black !important;
   color: white;
 }
@@ -129,6 +128,10 @@ label {
   cursor: default;
 }
 
-.skeletonFlex{
+.skeletonFlex {
   display: flex;
+}
+
+.deleteButton{
+  cursor: pointer;
 }

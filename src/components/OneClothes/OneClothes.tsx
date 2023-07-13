@@ -11,7 +11,7 @@ const OneClothes = () => {
   const loading = useSelector((state) => state.clothes.loading);
   const [activeModal, setActiveModal] = useState(false);
   const [sizeIndex, setSizeIndex] = useState(null);
-  const id = useParams();
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -12,7 +12,7 @@ const initialState = {
 
 export const oneClothes = createAsyncThunk(
   "one/clothes",
-  async ({ id }, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:4000/clothes/${id}`);
       const data = res.json();

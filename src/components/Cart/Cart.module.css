@@ -133,6 +133,16 @@ label {
   display: flex;
 }
 
-.deleteButton{
+.deleteButton {
   cursor: pointer;
+}
+
+.totalBlock {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+}
+.emptyText {
+  color: gray;
+  font-size: 32px;
 }

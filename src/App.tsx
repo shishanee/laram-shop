@@ -15,6 +15,7 @@ import Delivery from "./components/Delivery/Delivery";
 import OneClothes from "./components/OneClothes/OneClothes";
 import Profile from "./components/Profile/Profile";
 import AccessoryPage from "./components/Accessory/AccessoryPage";
+import Exit from "./components/Profile/Exit";
 
 function App() {
   const [theme, setTheme] = React.useState(true);
@@ -22,7 +23,8 @@ function App() {
     <>
       <Header theme={theme} setTheme={setTheme} />
       <Routes>
-        <Route path="/personal" element={<Profile />}/>
+      <Route path="/exit" element={<Exit/>}/>
+        <Route path="/profile" element={<Profile />}/>
         <Route
           path="/"
           element={<HomePage theme={theme} setTheme={setTheme} />}

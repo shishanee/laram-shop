@@ -88,8 +88,20 @@ const Header = ({ theme, setTheme }) => {
     setIsOpenCollection(false);
     setIsOpenAccessory(false);
   }
+
+  const handleBlur = () => {
+    setTimeout(() => {
+      setIsOpenCollection(false);
+      setIsOpenCategory(false);
+      setIsOpenAccessory(false);
+    }, 100);
+  };
+
   return (
-    <div className={theme ? styles.header : (styles.header, styles.headerDark)}>
+    <div
+      onBlur={handleBlur}
+      className={theme ? styles.header : (styles.header, styles.headerDark)}
+    >
       <div className={styles.logo}>
         <Link to={"/"}>
           <h1>L A R A M</h1>

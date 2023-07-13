@@ -69,3 +69,46 @@
     display: none;
   }
 }
+
+@media (max-width: 800px) {
+  .homePage{
+    padding: 0;
+    margin: 0;
+  }
+  .blockOne {
+    margin: 0;
+    padding: 0;
+  }
+  .homePageDark {
+    padding: 0;
+    margin: 0;
+  }
+  .blockOne p {
+    text-align: center;
+    padding: 0px 10px;
+  }
+}
+@media (max-width: 1080px) {
+  .homePage{
+    padding: 0;
+    margin: 0;
+  }
+  .blockOne {
+    margin: 0;
+    padding: 0;
+  }
+  .homePageDark {
+    padding: 0;
+    margin: 0;
+  }
+  .blockOne p {
+    text-align: center;
+    padding: 0px 10px;
+  }
+  .blockOne h1 {
+    display: none;
+  }
+  .blockOne {
+    margin-top: 50px;
+  }
+}

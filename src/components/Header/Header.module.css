@@ -1,6 +1,8 @@
 .header {
   width: 100%;
+  position: fixed;
   display: flex;
+  z-index: 1050;
   align-items: center;
   justify-content: space-between;
   padding: 15px 60px;
@@ -204,12 +206,58 @@
     margin-top: 20px;
     line-height: 0;
   }
-  .logo h1 {
-    font-size: 60px;
+  .headerDark {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .headerCenter {
+    margin-bottom: 20px;
+  }  
+  .collectionsList {
+    position: absolute;
+    width: 150px;
+    top: 180px;
+    left: 150px;
+  }
+  .categoriesList {
+    position: absolute;
+    width: 150px;
+    top: 180px;
+    left: 310px;
+  }
+  .accesList{
+    position: absolute;
+    width: 150px;
+    top: 180px;
+    left: 470px;
+    display: flex;
   }
   .headerDark {
     position: relative;
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 1080px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo h1{
+    display: block
+  }
+  .headerDark {
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 }

@@ -6,7 +6,6 @@
 .linksTwo a {
   text-decoration: none;
   color: white;
-  margin-bottom: 10px;
 }
 
 .footer {
@@ -18,7 +17,7 @@
 }
 .footer p {
   color: white;
-  margin-bottom: 10px;
+  padding: 5px;
 }
 
 .linksOne {
@@ -28,7 +27,7 @@
 .linksOne a {
   text-decoration: none;
   color: white;
-  margin-bottom: 10px;
+  padding: 5px;
 }
 
 .links {
@@ -127,5 +126,67 @@
   }
   .email button {
     margin-top: 15px;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .footer{
+    display: flex;
+    align-items: center;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+  }
+  .linksTwo a{
+    padding: 0;
+    margin: 0;
+  }
+  .linksTwo p {
+    margin: 0;
+    padding: 5px;
+  }
+  .linksOne a{
+    padding: 0;
+    margin: 0;
+  }
+  .linksOne a{
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 680px) {
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+}
+
+@media (max-width: 1080px) {
+  .footer{
+    display: flex;
+    align-items: center;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+  }
+  .linksTwo a{
+    padding: 0;
+    margin: 0;
+  }
+  .linksTwo p {
+    margin: 0;
+    padding: 5px;
+  }
+  .linksOne a{
+    padding: 0;
+    margin: 0;
+  }
+  .linksOne a{
+    margin: 0;
+    padding: 5px;
   }
 }

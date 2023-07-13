@@ -5,48 +5,66 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserOrders } from "../../features/ordersSlice";
 
 const Profile = () => {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getUserOrders())
-    }, [dispatch])
-    const orders = useSelector((state) => state.orders.orders)
-    console.log(orders);
-    
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUserOrders());
+  }, [dispatch]);
+  const orders = useSelector((state) => state.orders.orders);
+
   // const user = useSelector((state) => state.users.user)
   return (
     <div>
-      <div className={styles.profileSide}> Аккаунт - Основное</div>
-      <div className={styles.mainProfile}>
-        <div className={styles.sideBar}>
-          <div className={styles.side}>
-            <Link to={"/personal"}>Основное</Link>
-            <Link to={"/dannie"}>Данные</Link>
-            <Link to={"/orders"}>История заказов</Link>
-            <Link to={"/exit"}>Выйти</Link>
+      <p className={styles.p}>Аккаунт  —  Основное</p>
+      <div className={styles.profile}>
+        <div className={styles.profileMain}>
+          <div className={styles.profileSide}>
+            <div className={styles.side}>
+              <Link className={styles.linkk} to={"/profile"}>Основное</Link>
+              <Link className={styles.linkk} to={"/dannie"}>Данные</Link>
+              <Link className={styles.linkk} to={"/orders"}>История заказов</Link>
+              <Link className={styles.linkk} to={"/exit"}>Выйти</Link>
+            </div>
           </div>
-        </div>
+
+          <table>
+            <thead>
+              <tr className={styles.firstTr}>
+                <td>Номер </td>
+                <td>Заказ</td>
+                {/* <td>Количество</td> */}
+                <td>Дата заказа</td>
+                <td>Сумма</td>
+                <td>Статус</td>
+              </tr>
+            </thead>
             {orders.map((item) => {
-                return (
-                    <div>
-                    <div> Номер заказа: {item.number}</div>
-                   <div>{item.products.map((product) => {
-                    return (
-                        <div>
-                        <div>Заказ: {product.product.name}</div>
-                        <div>Количество: {product.quantity}</div>
-                        </div>
-                    )
-                   } )}</div>
-                    <div>Дата заказа: {item.date}</div>
-                    <div>Сумма: {item.total}</div>
-                    <div>Статус: {item.status}</div>
-                    </div>
-                )
+              return (
+                <tbody>
+                  <tr className={styles.bb}>
+                    <td> {item.number}</td>
+                    {item.products.map((products) => {
+                      return (
+                        <>
+                          <div className={styles.orderName}>
+                            {" "}
+                            {products.product.name.split(" ")[0]}{" "}
+                            {products.quantity} шт{" "}
+                          </div>
+                          {/* <td className={styles.orderAmount}> </td> */}
+                        </>
+                      );
+                    })}
+                    <td>{item.date.split("T")[0]}</td>
+                    <td>{item.total} ₽</td>
+                    <td>{item.status}</td>
+                  </tr>
+                </tbody>
+              );
             })}
-        <div>
-          <h3>Здравствуйте, Абдуррахман</h3>
-          <div>
-            
+          </table>
+
+            <div>
+              <h3>Здравствуйте, Абдуррахман</h3>
           </div>
         </div>
       </div>
@@ -55,4 +73,3 @@ const Profile = () => {
 };
 
 export default Profile;
-

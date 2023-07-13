@@ -186,9 +186,17 @@ const cartSlice = createSlice({
       })
       .addCase(fetchPlusCloth.fulfilled, (state, action) => {
         const { id, size } = action.meta.arg;
+
+        const { cloth } = state.cart.cart.find((item) => item.cloth._id === id);
+        const { inStock } = cloth.size.find((item) => item.size === size);
+
         const newCart = state.cart.cart.map((item) => {
           if (item.cloth._id === id && item.size === size) {
-            item.amount++;
+            console.log(inStock, item.amount);
+
+            if (inStock > item.amount) {
+              item.amount++;
+            }
             return item;
           }
           return item;

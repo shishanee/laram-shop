@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 const InfoBlock = () => {
   const dispatch = useDispatch();
 
-  const delivery = useSelector((state) => state.cart.delivery);
+  const { delivery, cart } = useSelector((state) => state.cart);
 
   const [checkbox, setCheckbox] = useState(false);
   const [payment, setPayment] = useState(true);
@@ -19,7 +19,9 @@ const InfoBlock = () => {
   const [comment, setComment] = useState("");
 
   const handleBuyCloths = () => {
-    dispatch(fetchBuyCloths());
+    if (cart.cart.length > 0) {
+      dispatch(fetchBuyCloths());
+    }
   };
 
   return (

@@ -142,7 +142,7 @@ const Header = ({ theme, setTheme }) => {
             <div className={styles.catalogBlock}>
               {categories.map((item) => {
                 return (
-                  <div className={styles.listName}>
+                  <div key={item._id} className={styles.listName}>
                     <button onClick={() => handleNavigateCategories(item._id)}>
                       {item.name}
                     </button>
@@ -160,7 +160,7 @@ const Header = ({ theme, setTheme }) => {
             <div className={styles.catalogBlock}>
               {collections.map((item) => {
                 return (
-                  <div className={styles.listName}>
+                  <div key={item._id} className={styles.listName}>
                     <button onClick={() => handleNavigateCollections(item._id)}>
                       {item.name}
                     </button>
@@ -178,7 +178,7 @@ const Header = ({ theme, setTheme }) => {
             <div className={styles.catalogBlock}>
               {acces.map((item) => {
                 return (
-                  <div className={styles.listName}>
+                  <div key={item._id} className={styles.listName}>
                     <button onClick={() => handleNavigateAcces(item._id)}>
                       {item.name}
                     </button>

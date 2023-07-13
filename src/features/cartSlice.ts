@@ -178,8 +178,11 @@ const cartSlice = createSlice({
       .addCase(addCloth.rejected, (state) => {
         state.status = false;
       })
-      .addCase(addCloth.fulfilled, (state) => {
+      .addCase(addCloth.fulfilled, (state, action) => {
         state.status = false;
+        if (typeof action.payload === "object") {
+          state.cart.push(action.payload);
+        }
       })
       .addCase(fetchPlusCloth.fulfilled, (state, action) => {
         const { id, size } = action.meta.arg;

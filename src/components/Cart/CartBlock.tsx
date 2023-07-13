@@ -7,15 +7,7 @@ import {
   fetchRemoveCloth,
 } from "../../features/cartSlice";
 
-const CartBlock = ({
-  id,
-  image,
-  name,
-  collection,
-  size,
-  amount,
-  price,
-}) => {
+const CartBlock = ({ id, image, name, collection, size, amount, price }) => {
   const dispatch = useDispatch();
 
   const plusCloth = (id) => {
@@ -36,10 +28,14 @@ const CartBlock = ({
         <img src={`http://localhost:4000/${image}`} alt="cloth" />
         <div className={styles.clothInfo}>
           <div>{name}</div>
-          <div className={styles.grayColor}>
-            Коллекция:{" "}
-            <span className={styles.paddingHorizontal}>{collection}</span>
-          </div>
+          {collection ? (
+            <div className={styles.grayColor}>
+              Коллекция:
+              <span className={styles.paddingHorizontal}>{collection}</span>
+            </div>
+          ) : (
+            ""
+          )}
           <div
             className={`${styles.characteristics} ${styles.marginVertically}`}
           >

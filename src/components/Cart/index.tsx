@@ -43,7 +43,7 @@ const Cart = () => {
               size={item.size}
               amount={item.amount}
               price={item.cloth.price}
-              collection={item.cloth.collections.name}
+              collection={item.cloth.collections?.name}
             />
           ))}
           <Total total={total} />

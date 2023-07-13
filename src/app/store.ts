@@ -9,6 +9,8 @@ import clothes from "../features/clothesSlice";
 
 import orders from "../features/ordersSlice";
 
+import user from "../features/usersSlice"
+
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +18,7 @@ export const store = configureStore({
     catalog,
     cart,
     clothes,
-    orders
+    orders,
+    user
   },
 });

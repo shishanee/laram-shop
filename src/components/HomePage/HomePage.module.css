@@ -53,7 +53,7 @@
   font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
-  animation: laram 5s linear infinite;
+  animation: laram 2s linear infinite;
 }
 
 @keyframes laram{

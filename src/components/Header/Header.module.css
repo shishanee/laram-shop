@@ -1,7 +1,5 @@
 .header {
   width: 100%;
-  /* position: fixed;
-  z-index: 1000; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,7 +57,7 @@
   background-color: white;
   box-shadow: 0px 0px 10px rgb(200, 200, 200);
   padding: 20px;
-  right: 850px;
+  right: 860px;
   top: 65px;
   z-index: 999;
 }
@@ -69,7 +67,7 @@
   background-color: white;
   box-shadow: 0px 0px 10px rgb(200, 200, 200);
   padding: 20px;
-  right: 590px;
+  right: 520px;
   top: 65px;
   z-index: 999;
 }
@@ -79,7 +77,7 @@
   background-color: white;
   box-shadow: 0px 0px 10px rgb(200, 200, 200);
   padding: 20px;
-  right: 720px;
+  right: 690px;
   top: 65px;
   z-index: 999;
 }

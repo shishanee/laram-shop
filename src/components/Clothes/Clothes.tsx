@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const Clothes = () => {
   const clothes = useSelector((state) => state.clothes.clothes);
-  console.log(clothes);
   const dispatch = useDispatch();
 
   const navigate = useNavigate();

@@ -105,7 +105,6 @@ const Header = ({ theme, setTheme }) => {
         <button onClick={handleAccessory} className={styles.headerBar}>
           АКСЕССУАРЫ
         </button>
-        <button className={styles.headerBar}>SALE</button>
       </div>
       <div className={styles.headerRight}>
         <Link to="/cart">КОРЗИНА</Link>

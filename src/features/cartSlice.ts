@@ -186,7 +186,6 @@ const cartSlice = createSlice({
         const newCart = state.cart.cart.map((item) => {
           if (item.cloth._id === id && item.size === size) {
             item.amount++;
-            console.log(item);
             return item;
           }
           return item;

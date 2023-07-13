@@ -3,9 +3,7 @@ import photo from "../../../public/guys.png";
 import Clothes from "../Clothes/Clothes";
 import * as React from "react";
 
-
-const HomePage = ({theme, setTheme}) => {  
-
+const HomePage = ({ theme, setTheme }) => {
   return (
     <div className={theme ? styles.homePage : styles.homePageDark}>
       <div className={styles.cont}></div>
@@ -19,6 +17,20 @@ const HomePage = ({theme, setTheme}) => {
       <div className={styles.cont}></div>
       <div className={styles.blockTwo}>
         <img src={photo} alt="" />
+      </div>
+      <div className={styles.laramAnimation}>
+        <div className={styles.animationWrapper}>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
+
+          </div>
       </div>
       <Clothes />
     </div>

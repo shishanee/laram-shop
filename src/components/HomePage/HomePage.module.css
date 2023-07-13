@@ -31,3 +31,37 @@
 .homePageDark p {
   color: white;
 }
+
+.laramAnimation{
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(105, 105, 105);
+}
+
+.animationWrapper {
+  display: flex;
+}
+
+.dot {
+  padding: 20px;
+}
+.animationItem {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  animation: laram 5s linear infinite;
+}
+
+@keyframes laram{
+0% {
+  transform: translateZ(0)
+}
+to {
+  transform: translate3d(-100%, 0, 0);
+}
+
+}

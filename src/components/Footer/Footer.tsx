@@ -1,6 +1,3 @@
-import instagram from "../../../public/ins.png";
-import telegram from "../../../public/telegram.png";
-import vk from "../../../public/vk.png";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 

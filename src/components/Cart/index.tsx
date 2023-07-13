@@ -33,7 +33,7 @@ const Cart = () => {
           <CartSkeleton />
         </div>
       ) : (
-        <div>
+        <section className={styles.totalBlock}>
           {cart.map((item) => (
             <CartBlock
               key={item._id}
@@ -46,8 +46,12 @@ const Cart = () => {
               collection={item.cloth.collections?.name}
             />
           ))}
-          <Total total={total} />
-        </div>
+          {cart.length === 0 ? (
+            <div className={styles.emptyText}>Корзина пуста</div>
+          ) : (
+            <Total total={total} />
+          )}
+        </section>
       )}
     </div>
   );

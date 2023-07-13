@@ -181,7 +181,7 @@ const cartSlice = createSlice({
       .addCase(addCloth.fulfilled, (state, action) => {
         state.status = false;
         if (typeof action.payload === "object") {
-          state.cart.push(action.payload);
+          state.cart.cart = [...state.cart.cart, action.payload];
         }
       })
       .addCase(fetchPlusCloth.fulfilled, (state, action) => {

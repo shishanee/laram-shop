@@ -129,6 +129,28 @@ export const fetchRemoveCloth = createAsyncThunk(
   }
 );
 
+export const fetchBuyCloths = createAsyncThunk(
+  "cart/fetchBuyCloths",
+  async (_, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/buy-cloths`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+      });
+      const json = await res.json();
+      if (json.error) {
+        return thunkAPI.rejectWithValue(json.error);
+      }
+      return json;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,

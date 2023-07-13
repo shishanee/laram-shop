@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import styles from "./Cart.module.css";
 import { Checkbox } from "antd";
-import { setDelivery } from "../../features/cartSlice";
+import { fetchBuyCloths, setDelivery } from "../../features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const InfoBlock = () => {
   const dispatch = useDispatch();
-  const delivery = useSelector((state) => state.cart.delivery);
-  const [checkbox, setCheckbox] = useState(false);
 
+  const delivery = useSelector((state) => state.cart.delivery);
+
+  const [checkbox, setCheckbox] = useState(false);
   const [payment, setPayment] = useState(true);
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
@@ -16,6 +17,10 @@ const InfoBlock = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
+
+  const handleBuyCloths = () => {
+    dispatch(fetchBuyCloths());    
+  };
 
   return (
     <section className={styles.infoBlock}>
@@ -115,7 +120,8 @@ const InfoBlock = () => {
       <article className={styles.order}>
         <button
           className={checkbox ? styles.focusButton : styles.orderButtonDisabled}
-          disabled={checkbox}
+          disabled={!checkbox}
+          onClick={handleBuyCloths}
         >
           Заказать
         </button>

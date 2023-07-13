@@ -77,10 +77,10 @@ const OneClothes = () => {
                 {oneClothe.size.map((item, index) => {
                   return (
                     <button
-                      disabled={item.inStock === 0 ? true : false}
+                      disabled={item.inStock <= 0 ? true : false}
                       className={`${
                         index === sizeIndex ? styles.focusSize : ""
-                      } ${item.inStock === 0 ? styles.disabled : ""}`}
+                      } ${item.inStock <= 0 ? styles.disabled : ""}`}
                       onClick={() => setSizeIndex(index)}
                     >
                       {item.size}

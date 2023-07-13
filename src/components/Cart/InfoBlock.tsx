@@ -19,7 +19,7 @@ const InfoBlock = () => {
   const [comment, setComment] = useState("");
 
   const handleBuyCloths = () => {
-    dispatch(fetchBuyCloths());    
+    dispatch(fetchBuyCloths());
   };
 
   return (

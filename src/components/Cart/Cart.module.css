@@ -10,6 +10,7 @@
 }
 .cartBlock {
   width: 50%;
+  margin-right: 100px;
 }
 label {
   display: block;

@@ -13,7 +13,6 @@ const CartBlock = ({
   name,
   collection,
   size,
-  color,
   amount,
   price,
 }) => {
@@ -52,16 +51,7 @@ const CartBlock = ({
                 {size}
               </span>
             </div>
-            <div
-              className={`${styles.characteristic} ${styles.paddingHorizontal}`}
-            >
-              Цвет:
-              <span
-                className={`${styles.boldText} ${styles.paddingHorizontal}`}
-              >
-                ъуъ
-              </span>
-            </div>
+
             <div className={styles.characteristic}>
               Количество:
               <span

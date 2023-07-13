@@ -27,7 +27,11 @@ const Cart = () => {
     <div className={styles.main}>
       <InfoBlock />
       {status ? (
-        <CartSkeleton />
+        <div>
+          <CartSkeleton />
+          <CartSkeleton />
+          <CartSkeleton />
+        </div>
       ) : (
         <div>
           {cart.map((item) => (

@@ -3,18 +3,18 @@ import { Skeleton } from "antd";
 import styles from "./Cart.module.css";
 import SkeletonAvatar from "antd/es/skeleton/Avatar";
 const CartSkeleton = () => (
-  <div>
+  <div style={{marginRight: 145, marginBottom: 30}}>
     <div className={styles.skeletonFlex}>
       <SkeletonAvatar
         shape="square"
-        style={{ width: 180, height: 200, marginRight: 20 }}
+        style={{ width: 180, height: 250, marginRight: 20 }}
       />
       <div>
         <Skeleton
           active
           title={false}
           paragraph={{ rows: 2, width: [200, 180] }}
-          style={{marginTop: 5}}
+          style={{ marginTop: 5 }}
         />
         <div className={styles.skeletonFlex}>
           <Skeleton
@@ -26,14 +26,8 @@ const CartSkeleton = () => (
           <Skeleton
             active
             title={false}
-            paragraph={{ rows: 1, width: [120] }}
-            style={{ marginTop: 50, marginLeft: 30 }}
-          />
-          <Skeleton
-            active
-            title={false}
             paragraph={{ rows: 1, width: [150] }}
-            style={{ marginTop: 50, marginLeft: 30 }}
+            style={{ marginTop: 50}}
           />
         </div>
         <div className={styles.skeletonFlex}>
@@ -41,30 +35,16 @@ const CartSkeleton = () => (
             active
             title={false}
             paragraph={{ rows: 1, width: [100] }}
-            style={{ marginTop: 60 }}
+            style={{ marginTop: 50 }}
           />
           <Skeleton
             active
             title={false}
             paragraph={{ rows: 1, width: [60] }}
-            style={{ marginTop: 60, marginLeft: 320 }}
+            style={{ marginTop: 50, marginLeft: 140 }}
           />
         </div>
       </div>
-    </div>
-    <div className={styles.skeletonFlex}>
-      <Skeleton
-        active
-        title={false}
-        paragraph={{ rows: 3, width: [70, 70, 70]}}
-        style={{ marginTop: 30, marginLeft: 253 }}
-      />
-      <Skeleton
-        active
-        title={false}
-        paragraph={{ rows: 3, width: [70, 70, 70] }}
-        style={{ marginTop: 30, marginLeft: 300 }}
-      />
     </div>
   </div>
 );

@@ -1,6 +1,6 @@
 .profile{
     display: flex;
-    margin: 0px 50px 50px 50px;
+    padding: 0px 50px 50px 50px;
 }
 
 .p{
@@ -67,8 +67,12 @@ td{
 }
 
 
-.blockForExit{
-    margin-left: 200px;
+
+.exitMain {
+    position: absolute;
+    left: 530px;
+    height: 575px;
+
 }
 
 .butt{

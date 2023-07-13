@@ -1,13 +1,15 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { authSignIn } from "../../features/applicationSlice";
 import { useNavigate } from "react-router-dom";
 import photo from "../../../public/Foto.png";
 import styles from "./SignIn.module.css";
 
-const SignIn = ({theme, setTheme}) => {
+const SignIn = ({ theme, setTheme }) => {
+  const error = useSelector((state) => state.application.error);
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const [isSign, setIsSign] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,10 +22,17 @@ const SignIn = ({theme, setTheme}) => {
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
-    dispatch(authSignIn({ login, password }));
-    navigate("/");
+  const handleLogin = async () => {
+   await dispatch(authSignIn({ login, password }));
+    setIsSign(true);
   };
+
+  useEffect(() => {
+    if (isSign && !error) {
+      navigate("/");
+    }
+  }, [isSign, error, navigate]);
+
   return (
     <div className={theme ? styles.mainBlockIn : styles.mainBlockInDark}>
       <div className={styles.blockOne}>
@@ -42,6 +51,8 @@ const SignIn = ({theme, setTheme}) => {
             placeholder="Введите пароль"
           />
           <button onClick={handleLogin}>Войти</button>
+          <br />
+          {error}
         </div>
       </div>
       <div className={styles.imageBlock}>

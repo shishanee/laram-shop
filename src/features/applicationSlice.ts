@@ -9,11 +9,11 @@ const initialState = {
 
 export const authSignUp = createAsyncThunk(
   "auth/signUp",
-  async ({ login, password }, thunkAPI) => {
+  async ({ name, login, password }, thunkAPI) => {
     try {
       const res = await fetch("http://localhost:4000/auth", {
         method: "POST",
-        body: JSON.stringify({ login, password }),
+        body: JSON.stringify({ name, login, password }),
         headers: {
           "Content-type": "application/json",
         },

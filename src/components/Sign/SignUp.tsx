@@ -5,16 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import photo from "../../../public/Foto.png";
 import styles from "./SignIn.module.css";
 
-
-
-const SignUp = ({theme, setTheme}) => {
-
-  const [isSign, setIsSign] = useState(false);
-
+const SignUp = ({ theme, setTheme }) => {
+  const [name, setName] = useState("");
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
 
   const error = useSelector((state) => state.application.error);
+  const [isSign, setIsSign] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,30 +19,36 @@ const SignUp = ({theme, setTheme}) => {
   const changeLogin = (e) => {
     setLogin(e.target.value);
   };
+  const changeName = (e) => {
+    setName(e.target.value);
+  };
 
   const changePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleRegister = () => {
-    dispatch(authSignUp({ login, password }));
-    if (error) {
-      setIsSign(true);
-    }
+  const handleRegister = async () => {
+    await dispatch(authSignUp({ name, login, password }));
+    setIsSign(true);
   };
 
   useEffect(() => {
     if (isSign && !error) {
       navigate("/login");
     }
-  }, [error, navigate, isSign]);
+  }, [isSign, error, navigate]);
 
   return (
-
     <div className={theme ? styles.mainBlockIn : styles.mainBlockInDark}>
       <div className={styles.blockOne}>
         <div className={styles.form}>
           <p>Создайте аккаунт</p>
+          <input
+            onChange={changeName}
+            value={name}
+            type="text"
+            placeholder="Введите ваше имя"
+          />
           <input
             onChange={changeLogin}
             value={login}

@@ -193,7 +193,7 @@ const cartSlice = createSlice({
         const newCart = state.cart.cart.map((item) => {
           if (item.cloth._id === id && item.size === size) {
             console.log(inStock, item.amount);
-            
+
             if (inStock > item.amount) {
               item.amount++;
             }

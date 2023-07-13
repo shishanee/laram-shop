@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getClothes } from "../../features/clothesSlice";
 import styles from "./Clothes.module.css";
@@ -23,6 +23,7 @@ const Clothes = () => {
       {clothes.map((item) => {
         return (
           <div
+          key={item._id}
             onClick={() => handleNavigateClick(item._id)}
             className={styles.oneClothes}
           >

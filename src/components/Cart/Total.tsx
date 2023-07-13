@@ -10,15 +10,17 @@ const Total = ({ total }) => {
       <article className={styles.total}>
         <div className={styles.flex}>
           <span>Сумма:</span>
-          <span>{total}</span>
+          <span>{total} ₽</span>
         </div>
         <div className={styles.flex}>
           <span>Доставка:</span>
-          <span>{delivery ? "0 ₽" : "500 ₽"}</span>
+          <span>{delivery ? "0 ₽" : "650 ₽"}</span>
         </div>
         <div className={styles.flex}>
           <span className={styles.boldText}>Итог:</span>
-          <span className={styles.boldText}>{delivery ? total : total + 500}</span>
+          <span className={styles.boldText}>
+            {delivery ? total : total + 650} ₽
+          </span>
         </div>
       </article>
     </section>

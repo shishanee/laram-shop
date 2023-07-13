@@ -1,15 +1,26 @@
 import React from "react";
 import styles from "./Cart.module.css";
+import { useSelector } from "react-redux";
 
-const CartBlock = () => {
+const CartBlock = ({
+  image,
+  name,
+  collections,
+  size,
+  color,
+  amount,
+  price,
+}) => {
+  console.log(image);
+  
   return (
     <section className={styles.cartBlock}>
       <article className={styles.cloth}>
-        <div className={styles.image} />
+        <img src={`http://localhost:4000/${image}`} alt="cloth" />
         <div className={styles.clothInfo}>
-          <div>Пиджак KLS</div>
+          <div>{name}</div>
           <div className={styles.grayColor}>
-            Коллекция: <span className={styles.paddingHorizontal}>Зима</span>
+            Коллекция: <span className={styles.paddingHorizontal}>{collections}</span>
           </div>
           <div
             className={`${styles.characteristics} ${styles.marginVertically}`}
@@ -19,7 +30,7 @@ const CartBlock = () => {
               <span
                 className={`${styles.boldText} ${styles.paddingHorizontal}`}
               >
-                M
+                {size}
               </span>
             </div>
             <div
@@ -29,7 +40,7 @@ const CartBlock = () => {
               <span
                 className={`${styles.boldText} ${styles.paddingHorizontal}`}
               >
-                Белый
+                ъуъ
               </span>
             </div>
             <div className={styles.characteristic}>
@@ -38,7 +49,7 @@ const CartBlock = () => {
                 className={`${styles.boldText} ${styles.paddingHorizontal}`}
               >
                 <span className={styles.cursorPointer}>-</span>
-                <span className={styles.paddingHorizontal}>4</span>
+                <span className={styles.paddingHorizontal}>{amount}</span>
                 <span className={styles.cursorPointer}>+</span>
               </span>
             </div>
@@ -49,25 +60,11 @@ const CartBlock = () => {
               <span
                 className={`${styles.boldText} ${styles.paddingHorizontal}`}
               >
-                10 500 ₽
+                {price}
               </span>
             </span>
             <span className={styles.grayColor}>Удалить</span>
           </div>
-        </div>
-      </article>
-      <article className={styles.total}>
-        <div className={styles.flex}>
-          <span>Сумма:</span>
-          <span>24 500 ₽</span>
-        </div>
-        <div className={styles.flex}>
-          <span>Доставка:</span>
-          <span>0 ₽</span>
-        </div>
-        <div className={styles.flex}>
-          <span className={styles.boldText}>Итог:</span>
-          <span className={styles.boldText}>24 500 ₽</span>
         </div>
       </article>
     </section>

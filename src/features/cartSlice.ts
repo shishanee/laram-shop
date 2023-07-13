@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cart: [],
   error: "",
-  status: false,
+  status: true,
 };
 
 export const getUserCart = createAsyncThunk(
@@ -16,6 +16,31 @@ export const getUserCart = createAsyncThunk(
           "Content-type": "application/json",
           Authorization: `Bearer ${thunkAPI.getState().application.token}`,
         },
+      });
+      const json = await res.json();
+      if (json.error) {
+        return thunkAPI.rejectWithValue(json.error);
+      }
+      return json;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const addCloth = createAsyncThunk(
+  "cart/fetchAddCloth",
+  async ({ id, size }, thunkAPI) => {
+    try {
+      const res = await fetch(`http://localhost:4000/cart-add-cloth/${id.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
+        },
+        body: JSON.stringify({
+          size,
+        }),
       });
       const json = await res.json();
       if (json.error) {
@@ -44,6 +69,15 @@ const cartSlice = createSlice({
       .addCase(getUserCart.fulfilled, (state, action) => {
         state.status = false;
         state.cart = action.payload;
+      })
+      .addCase(addCloth.pending, (state) => {
+        state.status = true;
+      })
+      .addCase(addCloth.rejected, (state) => {
+        state.status = false;
+      })
+      .addCase(addCloth.fulfilled, (state) => {
+        state.status = false;
       });
   },
 });

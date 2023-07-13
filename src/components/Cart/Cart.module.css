@@ -71,10 +71,8 @@ label {
 .order button {
   width: 100%;
 }
-.image {
+.cartBlock img {
   width: 180px;
-  height: 200px;
-  background-color: black;
 }
 .cloth {
   display: flex;
@@ -129,4 +127,8 @@ label {
   color: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: default;
+}
+
+.skeletonFlex{
+  display: flex;
 }

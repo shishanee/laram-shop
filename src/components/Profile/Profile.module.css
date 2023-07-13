@@ -1,31 +1,30 @@
 .profile{
     display: flex;
-    justify-content: space-between;
-    margin: 50px;
+    margin: 0px 50px 50px 50px;
 }
 
 .p{
     font-size: 13px;
-    margin-left: 50px;
     margin-top: 20px;
     margin-bottom: 100px;
-}
-
-.profileMain {
-    display: flex;
-    justify-content: space-between;
-    /* margin: 50px; */
 }
 
 .profileSide{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .side{
     display: flex;
     flex-direction: column;
+}
+
+.nameAndOrders{
+    margin-left: 180px;
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -57,6 +56,14 @@ td{
 .linkk{
     text-decoration: none;
     color: rgb(98, 98, 98);
+    margin-bottom: 15px;
+}
+
+.linkk1{
+    text-decoration: none;
+    color: rgb(26, 26, 26);
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
 
@@ -84,10 +91,46 @@ td{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: centers;
+    justify-content: center;
 }
 
 .imageExit{
     width: 320px;
     margin-left: 500px;
+}
+
+.catalogBut{
+    width: 200px;
+    margin: 20px 0px;
+    color: #fff;
+    background: black;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.catalogBut:hover{
+    background: #03ace0;
+}
+
+.textCart{
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+}
+
+.emptyCartBlock{
+    display: flex;
+    align-items: center;
+}
+
+.welcome{
+    margin-bottom: 100px;
+}
+
+.butText{
+    width: 390px;
+    display: flex;
+    flex-direction: column;
 }

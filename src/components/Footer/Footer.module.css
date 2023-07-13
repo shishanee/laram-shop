@@ -91,3 +91,41 @@
   background-color: white;
   border: 1px solid black;
 }
+
+
+@media (max-width: 450px){
+  .footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .email {
+    display: flex;
+    flex-direction: column;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+  }
+  .linksOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .linksOne a {
+    padding: 0px 15px;
+  }
+  .linksTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .linksTwo a {
+    padding: 0px 15px;
+  }
+  .email button {
+    margin-top: 15px;
+  }
+}

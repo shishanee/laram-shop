@@ -4,13 +4,13 @@ import vk from "../../../public/vk.png";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
-const Footer = ({theme, setTheme}) => {
+const Footer = ({ theme, setTheme }) => {
   return (
     <div className={theme ? styles.footer : styles.footerDark}>
       <div className={styles.links}>
         <div className={styles.linksOne}>
-          <Link to={'/garant'}>Гарантия</Link>
-          <Link to={'/delivery'}>Доставка & Возвраты</Link>
+          <Link to={"/garant"}>Гарантия</Link>
+          <Link to={"/delivery"}>Доставка</Link>
         </div>
         <div className={styles.linksTwo}>
           <Link>

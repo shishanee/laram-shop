@@ -186,3 +186,30 @@
   height: 20px;
   border-radius: 50%;
 }
+
+@media (max-width: 450px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .headerCenter {
+    display: flex;
+    flex-direction: column;
+  }
+  .headerRight {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    line-height: 0;
+  }
+  .logo h1 {
+    font-size: 60px;
+  }
+  .headerDark {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+}

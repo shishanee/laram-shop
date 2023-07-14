@@ -13,9 +13,8 @@ const OneClothes = () => {
       token: string;
     };
   };
-  const token: string = useSelector(
-    (state: AppState) => state.application.token
-  );
+  const token: string = useSelector((state: AppState) => state.application.token);
+  const loading = useSelector((state) => state.clothes.loading);
 
   const [activeModal, setActiveModal] = useState(false);
   const [sizeIndex, setSizeIndex] = useState<number | null>(null);
@@ -111,11 +110,9 @@ const OneClothes = () => {
             </button>
           </div>
         </div>
-        {token && (
-          <button className={styles.addCart} onClick={handleAddCloth}>
-            Добавить в корзину
-          </button>
-        )}
+       {token && <button className={styles.addCart} onClick={handleAddCloth}>
+          Добавить в корзину
+        </button>}
         <div className={styles.description}>
           <h3>Описание</h3>
           <p>{oneClothe.description}</p>

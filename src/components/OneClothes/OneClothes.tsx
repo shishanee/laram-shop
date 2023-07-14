@@ -9,6 +9,8 @@ import { addCloth } from "../../features/cartSlice";
 
 const OneClothes = () => {
   const loading = useSelector((state) => state.clothes.loading);
+  const token = useSelector((state) => state.application.token);
+
   const [activeModal, setActiveModal] = useState(false);
   const [sizeIndex, setSizeIndex] = useState<number | null>(null);
   const { id } = useParams();
@@ -103,9 +105,9 @@ const OneClothes = () => {
             </button>
           </div>
         </div>
-        <button className={styles.addCart} onClick={handleAddCloth}>
+       {token && <button className={styles.addCart} onClick={handleAddCloth}>
           Добавить в корзину
-        </button>
+        </button>}
         <div className={styles.description}>
           <h3>Описание</h3>
           <p>{oneClothe.description}</p>

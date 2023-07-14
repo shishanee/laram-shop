@@ -23,8 +23,8 @@ function App() {
     <>
       <Header theme={theme} setTheme={setTheme} />
       <Routes>
-      <Route path="/exit" element={<Exit/>}/>
-        <Route path="/profile" element={<Profile />}/>
+        <Route path="/exit" element={<Exit />} />
+        <Route path="/profile" element={<Profile />} />
         <Route
           path="/"
           element={<HomePage theme={theme} setTheme={setTheme} />}
@@ -54,9 +54,6 @@ function App() {
           element={<Delivery theme={theme} setTheme={setTheme} />}
         />
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/account" element={<Sign />} />
-        <Route path="/auth" element={<SignUp />} />
-        <Route path="/login" element={<SignIn />} />
         <Route path="/cart" element={<Cart />} />
         <Route path={`/oneClothes/:id`} element={<OneClothes />} />
         <Route path="/category/:id" element={<CategoryPage />} />

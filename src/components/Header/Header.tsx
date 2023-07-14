@@ -119,7 +119,7 @@ const Header = ({ theme, setTheme }) => {
         </button>
       </div>
       <div className={styles.headerRight}>
-        <Link to="/cart">КОРЗИНА</Link>
+        {token && <Link to="/cart">КОРЗИНА</Link>}
         {!token ? (
           <Link to={"/account"}>АККАУНТ</Link>
         ) : (

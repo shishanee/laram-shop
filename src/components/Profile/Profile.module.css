@@ -1,140 +1,138 @@
-.profile{
-    display: flex;
-    padding: 0px 50px 50px 50px;
+.profile {
+  display: flex;
+  padding: 0px 50px 50px 50px;
+}
+.nameAndOrders {
+  margin-bottom: 59px;
 }
 
-.p{
-    font-size: 13px;
-    margin-top: 20px;
-    margin-bottom: 100px;
+.p {
+  font-size: 13px;
+  margin-top: 20px;
+  margin-bottom: 100px;
 }
 
-.profileSide{
-    display: flex;
-    flex-direction: column;
+.profileSide {
+  display: flex;
+  flex-direction: column;
 }
 
-.side{
-    display: flex;
-    flex-direction: column;
+.side {
+  display: flex;
+  flex-direction: column;
 }
 
-.nameAndOrders{
-    margin-left: 180px;
-    margin-top: 130px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.nameAndOrders {
+  margin-left: 180px;
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
-.firstTr{
-    color: black;
-    font-weight: 600;
-    text-align: center;
+.firstTr {
+  color: black;
+  font-weight: 600;
+  text-align: center;
 }
 
-.orderName{
-    width: 200px; /* Задайте здесь нужную ширину */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-   
+.orderName {
+  width: 200px; /* Задайте здесь нужную ширину */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
-table{
-    border-spacing: 30px 5px;
-    width: 850px;
+table {
+  border-spacing: 30px 5px;
+  width: 850px;
 }
 
-td{
-    text-align: center;
-    white-space: nowrap;
+td {
+  text-align: center;
+  white-space: nowrap;
 }
 
-.linkk{
-    text-decoration: none;
-    color: rgb(98, 98, 98);
-    margin-bottom: 15px;
+.linkk {
+  text-decoration: none;
+  color: rgb(98, 98, 98);
+  margin-bottom: 15px;
 }
 
-.linkk1{
-    text-decoration: none;
-    color: rgb(26, 26, 26);
-    margin-bottom: 15px;
-    font-weight: 500;
+.linkk1 {
+  text-decoration: none;
+  color: rgb(26, 26, 26);
+  margin-bottom: 15px;
+  font-weight: 500;
 }
-
-
 
 .exitMain {
-    position: absolute;
-    left: 530px;
-    height: 575px;
-
+  height: 440px;
+  padding-top: 150px;
+  margin-left: 370px;
 }
 
-.butt{
-    width: 240px;
-    height: 50px;
-    background: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    margin-left: 15px;
+.butt {
+  width: 240px;
+  height: 50px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 15px;
 }
 
-.exitText{
-    margin-left: 100px;
-    font-size: 25px;
+.exitText {
+  margin-left: 100px;
+  font-size: 25px;
 }
 
-.blockBut{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.blockBut {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.imageExit{
-    width: 320px;
-    margin-left: 500px;
+.imageExit {
+  width: 320px;
+  margin-left: 500px;
 }
 
-.catalogBut{
-    width: 200px;
-    margin: 20px 0px;
-    color: #fff;
-    background: black;
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    cursor: pointer;
+.catalogBut {
+  width: 200px;
+  margin: 20px 0px;
+  color: #fff;
+  background: black;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  cursor: pointer;
 }
 
-.catalogBut:hover{
-    background: #03ace0;
+.catalogBut:hover {
+  background: #03ace0;
 }
 
-.textCart{
-    font-size: 14px;
-    color: black;
-    font-weight: 500;
+.textCart {
+  font-size: 14px;
+  color: black;
+  font-weight: 500;
 }
 
-.emptyCartBlock{
-    display: flex;
-    align-items: center;
+.emptyCartBlock {
+  display: flex;
+  align-items: center;
 }
 
-.welcome{
-    margin-bottom: 100px;
+.welcome {
+  margin-bottom: 100px;
 }
 
-.butText{
-    width: 390px;
-    display: flex;
-    flex-direction: column;
+.butText {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
 }

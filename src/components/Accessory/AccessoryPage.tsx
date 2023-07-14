@@ -24,6 +24,7 @@ const AccessoryPage = () => {
       {accessory.map((item) => {
         return (
           <div
+          key={item._id}
             onClick={() => handleNavigateClick(item._id)}
             className={styles.oneClothes}
           >

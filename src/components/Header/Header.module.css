@@ -212,6 +212,9 @@
     display: flex;
     flex-direction: column;
   }
+  .headerBar {
+    padding: 0;
+  }
 }
 
 @media (max-width: 800px) {

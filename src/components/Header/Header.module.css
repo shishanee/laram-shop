@@ -213,18 +213,19 @@
     flex-direction: column;
   }
   .headerBar {
-    padding: 0;
+    padding: 10px 0;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .header {
     display: flex;
     flex-direction: column;
     position: relative;
   }
   .headerCenter {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+
   }  
   .collectionsList {
     position: absolute;

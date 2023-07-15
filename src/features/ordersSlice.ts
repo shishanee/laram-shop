@@ -28,29 +28,6 @@ export const getUserOrders = createAsyncThunk(
   }
 );
 
-export const postUserOrders = createAsyncThunk(
-    "orders/post",
-    async ({products, total}, thunkAPI) => {
-        try {
-            const res = await fetch("http://localhost:4000/orders", {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json",
-          Authorization: `Bearer ${thunkAPI.getState().application.token}`,
-                },
-                body: JSON.stringify({products, total})
-            });
-            const json = await res.json();
-            if (json.error) {
-                return thunkAPI.rejectWithValue(json.error)
-            }
-            return json;
-        } catch (error) {
-            thunkAPI.rejectWithValue(error.message)
-        }
-    }
-)
-
 const ordersSlice = createSlice({
   name: "order",
   initialState,

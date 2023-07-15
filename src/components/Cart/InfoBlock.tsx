@@ -3,9 +3,10 @@ import styles from "./Cart.module.css";
 import { Checkbox } from "antd";
 import { fetchBuyCloths, setDelivery } from "../../features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../app/store";
 
 const InfoBlock = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const { delivery, cart } = useSelector((state) => state.cart);
 
@@ -20,7 +21,9 @@ const InfoBlock = () => {
 
   const handleBuyCloths = () => {
     if (cart.cart.length > 0) {
-      dispatch(fetchBuyCloths());
+      console.log(city, address, name, phone, email, comment);
+      
+      dispatch(fetchBuyCloths({city, address, name, phone, email, comment}));
     }
   };
 

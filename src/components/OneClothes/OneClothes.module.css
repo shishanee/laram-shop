@@ -115,6 +115,33 @@
   border: none !important;
   cursor: default !important;
 }
-.sizes button{
-cursor: pointer;
+.sizes button {
+  cursor: pointer;
+}
+
+@media (max-width: 450px) {
+  .oneClotheMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .allImages {
+    display: none;
+  }
+  .imageBlock img {
+    width: 350px;
+    height: 400px;
+  }
+  .textBlock {
+    width: 300px;
+    text-align: center;
+  }
+  .description {
+    width: 300px;
+    padding: 25px 0px;
+  }
+  .table {
+    display: none;
+  }
 }

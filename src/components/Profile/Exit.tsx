@@ -1,13 +1,10 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
 
 const Exit = () => {
   const navigate = useNavigate();
-  const token = useSelector((state) => state.application.token);
-
   const handleExit = () => {
     navigate("/");
     localStorage.removeItem("token");

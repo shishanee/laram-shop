@@ -12,7 +12,6 @@ const OneOrder = () => {
   useEffect(() => {
     dispatch(getOrderById(id));
   }, []);
-  console.log(order);
 
   return (
     <div className={styles.paddingTop}>
@@ -32,21 +31,24 @@ const OneOrder = () => {
               Комментарий к заказу: {order.comment}
             </div>
           </div>
-          <div >
-          {order.products.map((item) => (
-            <div key={item._id} className={`${styles.clothFlex} ${styles.flex}`}>
-              <img
-                src={`http://localhost:4000/${item.cloth.image[0].path}`}
-                alt="cloth"
-              />
-              <div>
-                <div>{item.cloth.name}</div>
-                <div>Количество: {item.amount}</div>
-                <div>Размер: {item.size}</div>
-                <div>{item.cloth.price} ₽</div>
+          <div>
+            {order.products.map((item) => (
+              <div
+                key={item._id}
+                className={`${styles.clothFlex} ${styles.flex}`}
+              >
+                <img
+                  src={`http://localhost:4000/${item.cloth.image[0].path}`}
+                  alt="cloth"
+                />
+                <div>
+                  <div>{item.cloth.name}</div>
+                  <div>Количество: {item.amount}</div>
+                  <div>Размер: {item.size}</div>
+                  <div>{item.cloth.price} ₽</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       ) : (

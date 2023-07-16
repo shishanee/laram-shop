@@ -14,8 +14,6 @@ const HistoryOfOrders = () => {
     dispatch(getUserOrders());
   }, []);
 
-console.log(orders);
-
   return (
     <div className={styles.paddingTop}>
       <p className={styles.p}>Аккаунт — Данные</p>
@@ -43,7 +41,14 @@ console.log(orders);
                       <td>{item.date.split("T")[0]}</td>
                       <td>{item.total} ₽</td>
                       <td>{item.status}</td>
-                      <td><Link to={`/order/${item._id}`} className={styles.orderDetails}>Детали заказа</Link></td>
+                      <td>
+                        <Link
+                          to={`/order/${item._id}`}
+                          className={styles.orderDetails}
+                        >
+                          Детали заказа
+                        </Link>
+                      </td>
                     </tr>
                   </tbody>
                 );

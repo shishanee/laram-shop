@@ -131,7 +131,7 @@ export const fetchRemoveCloth = createAsyncThunk(
 
 export const fetchBuyCloths = createAsyncThunk(
   "cart/fetchBuyCloths",
-  async (_, thunkAPI) => {
+  async ({ city, address, name, phone, email, comment }, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:4000/buy-cloths`, {
         method: "PATCH",
@@ -139,6 +139,14 @@ export const fetchBuyCloths = createAsyncThunk(
           "Content-type": "application/json",
           Authorization: `Bearer ${thunkAPI.getState().application.token}`,
         },
+        body: JSON.stringify({
+          city,
+          address,
+          name,
+          phone,
+          email,
+          comment,
+        }),
       });
       const json = await res.json();
       if (json.error) {

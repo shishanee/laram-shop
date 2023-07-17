@@ -1,20 +1,15 @@
-.profile {
-  display: flex;
-  padding: 0px 50px 50px 50px;
+.paddingTop {
+  padding: 100px 60px 0 60px;
 }
-.nameAndOrders {
-  margin-bottom: 59px;
+.flex {
+  display: flex;
+  margin-bottom: 50px;
 }
 
 .p {
   font-size: 13px;
   margin-top: 20px;
-  margin-bottom: 100px;
-}
-
-.profileSide {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .side {
@@ -24,7 +19,6 @@
 
 .nameAndOrders {
   margin-left: 180px;
-  margin-top: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -68,8 +62,6 @@ td {
 }
 
 .exitMain {
-  height: 440px;
-  padding-top: 150px;
   margin-left: 370px;
 }
 
@@ -85,7 +77,6 @@ td {
 }
 
 .exitText {
-  margin-left: 100px;
   font-size: 25px;
 }
 
@@ -135,4 +126,28 @@ td {
   width: 390px;
   display: flex;
   flex-direction: column;
+}
+
+.center {
+  text-align: center;
+}
+.orderDetails {
+  text-decoration: none;
+  color: blue;
+}
+.flex img {
+  height: 150px;
+}
+
+.bigText {
+  font-size: 32px;
+  white-space: nowrap;
+}
+
+.marginBottom {
+  margin-bottom: 50px;
+}
+
+.clothFlex{
+  margin-left: 200px;
 }

@@ -1,4 +1,3 @@
-
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import SignUp from "./components/Sign/SignUp";
@@ -14,10 +13,13 @@ import Footer from "./components/Footer/Footer";
 import Garant from "./components/Garant/Garant";
 import Delivery from "./components/Delivery/Delivery";
 import OneClothes from "./components/OneClothes/OneClothes";
-import Profile from "./components/Profile/Profile";
+import Profile from "./components/Profile";
 import AccessoryPage from "./components/Accessory/AccessoryPage";
 import Exit from "./components/Profile/Exit";
 import { useSelector } from "react-redux";
+import Data from "./components/Profile/Data";
+import HistoryOfOrders from "./components/Profile/HistoryOfOrders";
+import OneOrder from "./components/Profile/OneOrder";
 
 function App() {
   const [theme, setTheme] = React.useState(true);
@@ -37,6 +39,9 @@ function App() {
         <Routes>
           <Route path="/exit" element={<Exit />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/orders" element={<HistoryOfOrders />} />
+          <Route path="/data" element={<Data />} />
+          <Route path="/order/:id" element={<OneOrder />} />
           <Route
             path="/"
             element={<HomePage theme={theme} setTheme={setTheme} />}
@@ -64,6 +69,9 @@ function App() {
           <Route path="/cart" element={<Navigate to={"/account"} />} />
           <Route path="/exit" element={<Navigate to={"/account"} />} />
           <Route path="/profile" element={<Navigate to={"/account"} />} />
+          <Route path="/orders" element={<Navigate to={"/account"} />} />
+          <Route path="/data" element={<Navigate to={"/account"} />} />
+          <Route path="/order/:id" element={<Navigate to={"/account"} />} />
           <Route
             path="/"
             element={<HomePage theme={theme} setTheme={setTheme} />}

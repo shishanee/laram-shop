@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getOrderById } from "../../features/ordersSlice";
 import { AppDispatch, RootState } from "../../app/store";
 import styles from "./Profile.module.css";
+import Footer from "../Footer/Footer";
 const OneOrder = () => {
   const { id } = useParams();
   const dispatch = useDispatch<AppDispatch>();
@@ -41,7 +42,7 @@ const OneOrder = () => {
                   src={`http://localhost:4000/${item.cloth.image[0].path}`}
                   alt="cloth"
                 />
-                <div>
+                <div className={styles.orderBlock}>
                   <div>{item.cloth.name}</div>
                   <div>Количество: {item.amount}</div>
                   <div>Размер: {item.size}</div>

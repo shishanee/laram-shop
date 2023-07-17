@@ -9,9 +9,6 @@ const SideBar = () => {
         <Link className={styles.linkk1} to="/profile">
           Основное
         </Link>
-        <Link className={styles.linkk} to="/data">
-          Данные
-        </Link>
         <Link className={styles.linkk} to="/orders">
           История заказов
         </Link>

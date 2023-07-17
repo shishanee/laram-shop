@@ -3,6 +3,7 @@ import styles from "./Profile.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../../features/usersSlice";
 import { AppDispatch, RootState } from "../../app/store";
+import HistoryOfOrders from "./HistoryOfOrders";
 
 const Basic = () => {
   const dispatch = useDispatch<AppDispatch>();

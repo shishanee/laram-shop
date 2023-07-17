@@ -17,7 +17,6 @@ import Profile from "./components/Profile";
 import AccessoryPage from "./components/Accessory/AccessoryPage";
 import Exit from "./components/Profile/Exit";
 import { useSelector } from "react-redux";
-import Data from "./components/Profile/Data";
 import HistoryOfOrders from "./components/Profile/HistoryOfOrders";
 import OneOrder from "./components/Profile/OneOrder";
 
@@ -40,7 +39,6 @@ function App() {
           <Route path="/exit" element={<Exit />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/orders" element={<HistoryOfOrders />} />
-          <Route path="/data" element={<Data />} />
           <Route path="/order/:id" element={<OneOrder />} />
           <Route
             path="/"

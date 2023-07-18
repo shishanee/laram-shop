@@ -1,4 +1,4 @@
-.block  p{
+.block p {
   color: grey;
 }
 
@@ -13,7 +13,6 @@
   justify-content: space-around;
   padding-top: 150px;
   padding-bottom: 50px;
-
 }
 
 .block {

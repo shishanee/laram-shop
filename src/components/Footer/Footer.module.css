@@ -30,7 +30,6 @@
   padding: 5px;
 }
 
-
 .links {
   display: flex;
   width: 30%;
@@ -67,7 +66,6 @@
   align-items: center;
 }
 
-
 .footerDark {
   background: white;
   padding: 20px;
@@ -79,7 +77,6 @@
 .footerDark p {
   color: black;
   margin-bottom: 10px;
-
 }
 .footerDark button {
   background-color: black;
@@ -92,9 +89,8 @@
   border: 1px solid black;
 }
 
-
-@media (max-width: 450px){
-  .footer{
+@media (max-width: 450px) {
+  .footer {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -130,9 +126,8 @@
   }
 }
 
-
 @media (max-width: 800px) {
-  .footer{
+  .footer {
     display: flex;
     align-items: center;
   }
@@ -140,7 +135,7 @@
     display: flex;
     align-items: center;
   }
-  .linksTwo a{
+  .linksTwo a {
     padding: 0;
     margin: 0;
   }
@@ -148,25 +143,25 @@
     margin: 0;
     padding: 5px;
   }
-  .linksOne a{
+  .linksOne a {
     padding: 0;
     margin: 0;
   }
-  .linksOne a{
+  .linksOne a {
     margin: 0;
     padding: 5px;
   }
 }
 
 @media (max-width: 680px) {
-.footer {
-  display: flex;
-  flex-direction: column;
-}
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 1080px) {
-  .footer{
+  .footer {
     display: flex;
     align-items: center;
   }
@@ -174,7 +169,7 @@
     display: flex;
     align-items: center;
   }
-  .linksTwo a{
+  .linksTwo a {
     padding: 0;
     margin: 0;
   }
@@ -182,11 +177,11 @@
     margin: 0;
     padding: 5px;
   }
-  .linksOne a{
+  .linksOne a {
     padding: 0;
     margin: 0;
   }
-  .linksOne a{
+  .linksOne a {
     margin: 0;
     padding: 5px;
   }

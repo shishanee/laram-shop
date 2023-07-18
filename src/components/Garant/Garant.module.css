@@ -1,12 +1,12 @@
 .blockMain {
   padding-top: 85px;
-  display: flex
+  display: flex;
 }
 
 .blockTwo img {
   display: block;
   width: 700px;
-  height: 700px
+  height: 700px;
 }
 
 .blockOne h1 {
@@ -20,14 +20,13 @@
   font-size: 20px;
 }
 
-.blockOne{
+.blockOne {
   margin: auto;
   width: 600px;
 }
 
-
 .blockMainDark {
   padding-top: 85px;
   background-color: black;
-  display: flex
+  display: flex;
 }

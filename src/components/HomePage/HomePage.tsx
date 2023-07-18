@@ -20,17 +20,34 @@ const HomePage = ({ theme, setTheme }) => {
       </div>
       <div className={styles.laramAnimation}>
         <div className={styles.animationWrapper}>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-        <div className={styles.animationItem}>LARAM <div className={styles.dot}>•</div></div>
-
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
           </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+          <div className={styles.animationItem}>
+            LARAM <div className={styles.dot}>•</div>
+          </div>
+        </div>
       </div>
       <Clothes />
     </div>

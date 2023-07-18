@@ -64,14 +64,14 @@
   }
 }
 
-@media (max-width: 450px){
+@media (max-width: 450px) {
   .blockOne {
     display: none;
   }
 }
 
 @media (max-width: 800px) {
-  .homePage{
+  .homePage {
     padding: 0;
     margin: 0;
   }
@@ -89,7 +89,7 @@
   }
 }
 @media (max-width: 1080px) {
-  .homePage{
+  .homePage {
     padding: 0;
     margin: 0;
   }

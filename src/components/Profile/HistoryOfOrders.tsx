@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserOrders } from "../../features/ordersSlice";
 import SideBar from "./SideBar";
 
-const HistoryOfOrders = () => {
+const HistoryOfOrders:React.FC = ():JSX.Element => {
   const dispatch = useDispatch<AppDispatch>();
   const orders = useSelector((state: RootState) => state.orders.orders);
 
